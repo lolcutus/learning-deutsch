@@ -1,4 +1,4 @@
-package larry.germana;
+package ro.cuzma.tools.germana;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -14,7 +14,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class VerbDialogNew extends TranslationDialog {
+public class VerbDialog extends TranslationDialog {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 7850160277898148471L;
     private Verb verb;
     private JTextField ichTF;
     private JTextField doTF;
@@ -22,8 +26,10 @@ public class VerbDialogNew extends TranslationDialog {
     private JTextField wirTF;
     private JTextField ihrTF;
     private JTextField sieTF;
+    private JTextField pastParticipleTF;
+    private JTextField doImperativTF;
 
-    public VerbDialogNew(Translation tr) throws HeadlessException {
+    public VerbDialog(Translation tr) throws HeadlessException {
         super(tr);
         // System.out.println(substantiv.getPlural());
     }
@@ -34,14 +40,16 @@ public class VerbDialogNew extends TranslationDialog {
         jMainPanel.setLayout(new BorderLayout());
 
         JPanel panelMain = new JPanel();
-        panelMain.setLayout(new GridLayout(3, 4));
+        panelMain.setLayout(new GridLayout(4, 4));
         ichTF = new JTextField();
         doTF = new JTextField();
         erTF = new JTextField();
         wirTF = new JTextField();
         ihrTF = new JTextField();
         sieTF = new JTextField();
-        sieTF.addKeyListener(new java.awt.event.KeyAdapter() {
+        pastParticipleTF = new JTextField();
+        doImperativTF = new JTextField();
+        doImperativTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     if (setTestAction()) {
@@ -65,6 +73,10 @@ public class VerbDialogNew extends TranslationDialog {
         panelMain.add(erTF);
         panelMain.add(new Label("Sie"));
         panelMain.add(sieTF);
+        panelMain.add(new Label("Past Partciple"));
+        panelMain.add(pastParticipleTF);
+        panelMain.add(new Label("Do Imperativ"));
+        panelMain.add(doImperativTF);
 
         /*
          * JPanel panelWest = new JPanel(); panelWest.setLayout(new GridLayout(1, 1));
@@ -95,6 +107,10 @@ public class VerbDialogNew extends TranslationDialog {
         ihrTF.setText(verb.getIhr());
         sieTF.setBackground(new Color(255, 255, 255));
         sieTF.setText(verb.getSie());
+        pastParticipleTF.setBackground(new Color(255, 255, 255));
+        pastParticipleTF.setText(verb.getPastParticiple());
+        doImperativTF.setBackground(new Color(255, 255, 255));
+        doImperativTF.setText(verb.getDoImperativ());
 
     }
 
@@ -145,6 +161,24 @@ public class VerbDialogNew extends TranslationDialog {
             sieTF.setBackground(new Color(255, 0, 0));
             contor++;
         }
+
+        if (pastParticipleTF.getText().equals(verb.getPastParticiple())
+                || verb.getPastParticiple().equals("-")) {
+            pastParticipleTF.setBackground(new Color(0, 255, 0));
+
+        } else {
+            pastParticipleTF.setBackground(new Color(255, 0, 0));
+            contor++;
+        }
+        if (doImperativTF.getText().equals(verb.getDoImperativ())
+                || verb.getDoImperativ().equals("-")) {
+            doImperativTF.setBackground(new Color(0, 255, 0));
+
+        } else {
+            doImperativTF.setBackground(new Color(255, 0, 0));
+            contor++;
+        }
+
         if (contor == 0) {
             result = true;
         }
@@ -166,6 +200,10 @@ public class VerbDialogNew extends TranslationDialog {
             } else if (aComponent.equals(ihrTF)) {
                 return sieTF;
             } else if (aComponent.equals(sieTF)) {
+                return pastParticipleTF;
+            } else if (aComponent.equals(pastParticipleTF)) {
+                return doImperativTF;
+            } else if (aComponent.equals(doImperativTF)) {
                 return btTest;
             } else if (aComponent.equals(btTest)) {
                 return btSolution;
@@ -195,6 +233,10 @@ public class VerbDialogNew extends TranslationDialog {
             } else if (aComponent.equals(btSolution)) {
                 return btTest;
             } else if (aComponent.equals(btTest)) {
+                return doImperativTF;
+            } else if (aComponent.equals(doImperativTF)) {
+                return pastParticipleTF;
+            } else if (aComponent.equals(pastParticipleTF)) {
                 return sieTF;
             }
             return ichTF;

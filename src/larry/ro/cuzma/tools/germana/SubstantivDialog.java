@@ -1,4 +1,4 @@
-package larry.germana;
+package ro.cuzma.tools.germana;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -29,6 +29,10 @@ import javax.swing.JTextField;
  */
 
 public class SubstantivDialog extends TranslationDialog {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 8051640574039732653L;
     private Substantiv substantiv;
     private JTextField singularTF;
     private JTextField pluralTF;
@@ -71,8 +75,7 @@ public class SubstantivDialog extends TranslationDialog {
 
         JPanel panelNorth = new JPanel();
         panelNorth.setLayout(new GridLayout(1, 1));
-        panelNorth.add(new JLabel(substantiv.getSourceSg() + " "
-                + substantiv.getDescription()));
+        panelNorth.add(new JLabel(substantiv.getSourceSg() + " " + substantiv.getDescription()));
         jMainPanel.add(panelNorth, BorderLayout.NORTH);
 
         jMainPanel.add(panelMain, BorderLayout.CENTER);

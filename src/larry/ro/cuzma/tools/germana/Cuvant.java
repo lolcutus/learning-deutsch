@@ -1,4 +1,4 @@
-package larry.germana;
+package ro.cuzma.tools.germana;
 
 import java.util.ArrayList;
 import java.util.List;

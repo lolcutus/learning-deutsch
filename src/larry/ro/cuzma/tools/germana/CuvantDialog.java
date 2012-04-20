@@ -1,4 +1,4 @@
-package larry.germana;
+package ro.cuzma.tools.germana;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -29,6 +29,10 @@ import javax.swing.JTextField;
  */
 
 public class CuvantDialog extends TranslationDialog {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -8694630578963570089L;
     private Cuvant cuvant;
     private JTextField traducereTF;
 

@@ -1,4 +1,4 @@
-package larry.germana;
+package ro.cuzma.tools.germana;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -36,6 +36,10 @@ import javax.swing.JPanel;
  */
 
 public abstract class TranslationDialog extends JDialog {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
     // protected String specialChars = "ü 0252 ä 0228 ö 0246 ß 0223 \u00C3 0195";
     JPanel jMainPanel = new JPanel();
     Translation tr;

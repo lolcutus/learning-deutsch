@@ -1,4 +1,4 @@
-package larry.germana;
+package ro.cuzma.tools.germana;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -103,7 +103,6 @@ public class TestDialogs {
                     try {
                         // int cnt = (new Integer(st.nextToken())).intValue();
                         // if (cnt > 0) {
-                        Translation tr = null;
                         List<Translation> tran = null;
                         tip = st.nextToken();
                         if (tip.equals("subst")) {

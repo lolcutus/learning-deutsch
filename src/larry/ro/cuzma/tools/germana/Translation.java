@@ -1,6 +1,4 @@
-package larry.germana;
-
-import java.util.List;
+package ro.cuzma.tools.germana;
 
 /**
  * <p>
@@ -23,18 +21,19 @@ import java.util.List;
 public abstract class Translation {
 
     private String description = "";
-    private int    apparition  = 0;
-    public String getLanguage() {
-		return language;
-	}
+    private int apparition = 0;
 
-	private String language;
+    public String getLanguage() {
+        return language;
+    }
+
+    private String language;
 
     public void setLanguage(String language) {
-		this.language = language;
-	}
+        this.language = language;
+    }
 
-	public Translation(int apparition,String language) {
+    public Translation(int apparition, String language) {
         this.apparition = apparition;
         this.language = language;
     }
