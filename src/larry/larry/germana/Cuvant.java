@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public class Cuvant extends Translation {
-    private String romana;
+    private String input;
     private String traducere;
 
     public String getTraducere() {
@@ -13,7 +13,7 @@ public class Cuvant extends Translation {
     }
 
     public void setRomana(String romana) {
-        this.romana = romana;
+        this.input = romana;
     }
 
     public void setTraducere(String traducere) {
@@ -21,29 +21,34 @@ public class Cuvant extends Translation {
     }
 
     public String getRomana() {
-        return romana;
+        return input;
     }
 
-    public Cuvant(int apparition, String romana, String traducere) {
-        super(apparition);
-        this.romana = romana;
+    public Cuvant(int apparition,String language, String input, String traducere) {
+        super(apparition,language);
+        this.input = input;
         this.traducere = traducere;
     }
-
-    public Cuvant(int apparition, StringTokenizer st) {
-        super(apparition);
-        this.romana = st.nextToken();
-        this.traducere = st.nextToken();
-        if (st.hasMoreTokens()) {
-            this.setDescription(st.nextToken());
-        }
+    
+    public Cuvant(int apparition,String language, String input, String traducere, String description) {
+        super(apparition,language);
+        this.input = input;
+        this.traducere = traducere;
+        this.setDescription(description);
     }
 
-    @Override
-    public List<Translation> getTranslations() {
-        List<Translation> list = new ArrayList<Translation>();
-        list.add(this);
-        list.add(new Cuvant(this.getApparition(), this.getTraducere(), this.getRomana()));
+  
+     
+    public static List<Translation> build(int apparition, StringTokenizer st){
+    	List<Translation> list = new ArrayList<Translation>();
+    	 String source = st.nextToken();
+         String translation = st.nextToken();
+         String desc = "";
+         if (st.hasMoreTokens()) {
+             desc = st.nextToken();
+         }
+        list.add(new Cuvant(apparition,TestDialogs.LANG_RO_DE, source,translation,desc));
+        list.add(new Cuvant(apparition,TestDialogs.LANG_DE_RO, translation, source));
         return list;
     }
 

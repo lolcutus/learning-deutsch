@@ -15,12 +15,24 @@ public class TestDialogs {
 
     private final static String TYPE_CONTOR = "contor";
     private final static String TYPE_ALL_CORRECT = "all_correct";
-    private List<Translation> translation = new ArrayList<Translation>();
+    private final static String LANG_ALL = "all";
+    public final static String LANG_RO_DE = "ro-de";
+    public final static String LANG_DE_RO = "de-ro";
+    private List<Translation> translations = new ArrayList<Translation>();
     Random rd = new Random();
     private String fileName = "words.csv";
     private int sleepTime = 5 * 60;
     private String separator = ";";
     private String type = TYPE_ALL_CORRECT;
+    private String lang = LANG_ALL;
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
 
     public String getSeparator() {
         return separator;
@@ -64,6 +76,9 @@ public class TestDialogs {
                     td.setType(args[i]);
                 }
             }
+            if (args[i].equals("-lang")) {
+                td.setLang(args[++i]);
+            }
 
         }
         /*
@@ -89,21 +104,23 @@ public class TestDialogs {
                         // int cnt = (new Integer(st.nextToken())).intValue();
                         // if (cnt > 0) {
                         Translation tr = null;
+                        List<Translation> tran = null;
                         tip = st.nextToken();
                         if (tip.equals("subst")) {
-                            tr = new Substantiv(1, st);
+                            tran = Substantiv.build(1, st);
                         }
                         if (tip.equals("cuv")) {
-                            tr = new Cuvant(1, st);
+                            tran = Cuvant.build(1, st);
                         }
                         if (tip.equals("verb")) {
-                            tr = new Verb(1, st);
+                            tran = Verb.build(1, st);
 
                         }
-                        if (tr != null) {
-                            List<Translation> words = tr.getTranslations();
-                            for (Translation trans : words) {
-                                translation.add(trans);
+                        if (tran != null) {
+                            for (Translation translation : tran) {
+                                if (getLang().equals(LANG_ALL)
+                                        || getLang().equals(translation.getLanguage()))
+                                    translations.add(translation);
                             }
                         }
                         // }
@@ -134,7 +151,7 @@ public class TestDialogs {
     }
 
     private void runAllCorrect() {
-        List<Translation> trans = translation;
+        List<Translation> trans = translations;
 
         boolean runThis = true;
         while (runThis) {
@@ -183,7 +200,7 @@ public class TestDialogs {
                             "An Inane Question", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
                         runThis = false;
                     } else {
-                        trans = translation;
+                        trans = translations;
                     }
                 }
 
@@ -195,8 +212,8 @@ public class TestDialogs {
     private void runContor() {
         boolean runThis = true;
         List<Translation> translationContor = new ArrayList<Translation>();
-        if (translation.size() > 0) {
-            for (Translation tr : translation) {
+        if (translations.size() > 0) {
+            for (Translation tr : translations) {
                 for (int i = 0; i < tr.getApparition(); i++) {
                     translationContor.add(tr);
                 }

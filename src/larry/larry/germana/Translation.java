@@ -24,12 +24,20 @@ public abstract class Translation {
 
     private String description = "";
     private int    apparition  = 0;
+    public String getLanguage() {
+		return language;
+	}
 
-    public Translation(int apparition) {
+	private String language;
+
+    public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public Translation(int apparition,String language) {
         this.apparition = apparition;
+        this.language = language;
     }
-
-    public abstract List<Translation> getTranslations();
 
     public String getDescription() {
         return description;

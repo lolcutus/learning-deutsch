@@ -5,7 +5,11 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public class Verb extends Translation {
-    private String romana;
+    public Verb(int apparition, String language) {
+		super(apparition, language);
+	}
+
+	private String source;
     private String infinitiv;
     private String ich;
     private String do_;
@@ -55,8 +59,8 @@ public class Verb extends Translation {
         return do_;
     }
 
-    public String getRomana() {
-        return romana;
+    public String getSource() {
+        return source;
     }
 
     public String getEr() {
@@ -84,7 +88,7 @@ public class Verb extends Translation {
     }
 
     public void setRomana(String romana) {
-        this.romana = romana;
+        this.source = romana;
     }
 
     public void setEr(String er) {
@@ -108,32 +112,33 @@ public class Verb extends Translation {
     //
     // }
 
-    public Verb(int apparition, StringTokenizer st) {
-        super(apparition);
-        this.romana = st.nextToken();
-        this.infinitiv = st.nextToken();
-        this.ich = st.nextToken();
-        this.do_ = st.nextToken();
-        this.er = st.nextToken();
-        this.wir = st.nextToken();
-        this.ihr = st.nextToken();
-        this.sie = st.nextToken();
+    public static List<Translation> build(int apparition, StringTokenizer st){
+    	Verb verb = new Verb(apparition,TestDialogs.LANG_RO_DE);
+    	verb.source = st.nextToken();
+    	verb.infinitiv = st.nextToken();
+    	verb.ich = st.nextToken();
+    	verb.do_ = st.nextToken();
+    	verb.er = st.nextToken();
+    	verb.wir = st.nextToken();
+    	verb.ihr = st.nextToken();
+    	verb.sie = st.nextToken();
         if (st.hasMoreTokens()) {
-            this.setAuxiliar(st.nextToken());
+        	verb.setAuxiliar(st.nextToken());
             if (st.hasMoreTokens()) {
-                this.setPastParticiple(st.nextToken());
+            	verb.setPastParticiple(st.nextToken());
                 if (st.hasMoreTokens()) {
-                    this.setRoTrecut(st.nextToken());
+                	verb.setRoTrecut(st.nextToken());
                     if (st.hasMoreTokens()) {
-                        this.setDoImperativ(st.nextToken());
+                    	verb.setDoImperativ(st.nextToken());
                         if (st.hasMoreTokens()) {
-                            this.setDescription(st.nextToken());
+                        	verb.setDescription(st.nextToken());
 
                         }
                     }
                 }
             }
         }
+        return getCuvinte(verb);
 
     }
 
@@ -149,10 +154,9 @@ public class Verb extends Translation {
         this.infinitiv = infinitiv;
     }
 
-    @Override
-    public List<Translation> getTranslations() {
+    private static List<Translation> getCuvinte(Verb verb) {
         List<Translation> list = new ArrayList<Translation>();
-        list.add(this);
+        list.add(verb);
 
         boolean addTu = true;
         boolean addEl = true;
@@ -161,109 +165,109 @@ public class Verb extends Translation {
         boolean addEi = true;
 
         String desc = "";
-        if (getDescription() != null && !getDescription().isEmpty()) {
-            desc = " (" + getDescription() + ")";
+        if (verb.getDescription() != null && !verb.getDescription().isEmpty()) {
+            desc = " (" + verb.getDescription() + ")";
         }
 
         String rez = "";
         rez += "eu";
-        String toAddGer = getIch();
-        if (toAddGer.equals(getDo_())) {
+        String toAddGer = verb.getIch();
+        if (toAddGer.equals(verb.getDo_())) {
             addTu = false;
             rez += " tu";
         }
-        if (toAddGer.equals(getEr())) {
+        if (toAddGer.equals(verb.getEr())) {
             addEl = false;
             rez += " el";
         }
-        if (toAddGer.equals(getWir())) {
+        if (toAddGer.equals(verb.getWir())) {
             addNoi = false;
             rez += " noi";
         }
-        if (toAddGer.equals(getIhr())) {
+        if (toAddGer.equals(verb.getIhr())) {
             addVoi = false;
             rez += " voi";
         }
-        if (toAddGer.equals(getSie())) {
+        if (toAddGer.equals(verb.getSie())) {
             addEi = false;
             rez += " ei";
         }
-        list.add(new Cuvant(this.getApparition(), toAddGer, rez + " " + getRomana()));
+        list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
         if (addTu) {
             rez = "";
             rez += "tu";
-            toAddGer = getDo_();
-            if (toAddGer.equals(getEr())) {
+            toAddGer = verb.getDo_();
+            if (toAddGer.equals(verb.getEr())) {
                 addEl = false;
                 rez += " el";
             }
-            if (toAddGer.equals(getWir())) {
+            if (toAddGer.equals(verb.getWir())) {
                 addNoi = false;
                 rez += " noi";
             }
-            if (toAddGer.equals(getIhr())) {
+            if (toAddGer.equals(verb.getIhr())) {
                 addVoi = false;
                 rez += " voi";
             }
-            if (toAddGer.equals(getSie())) {
+            if (toAddGer.equals(verb.getSie())) {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(this.getApparition(), toAddGer, rez + " " + getRomana()));
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
         }
         if (addEl) {
             rez = "";
             rez += "el";
-            toAddGer = getEr();
-            if (toAddGer.equals(getWir())) {
+            toAddGer = verb.getEr();
+            if (toAddGer.equals(verb.getWir())) {
                 addNoi = false;
                 rez += " noi";
             }
-            if (toAddGer.equals(getIhr())) {
+            if (toAddGer.equals(verb.getIhr())) {
                 addVoi = false;
                 rez += " voi";
             }
-            if (toAddGer.equals(getSie())) {
+            if (toAddGer.equals(verb.getSie())) {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(this.getApparition(), toAddGer, rez + " " + getRomana()));
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
         }
         if (addNoi) {
             rez = "";
             rez += "noi";
-            toAddGer = getWir();
-            if (toAddGer.equals(getIhr())) {
+            toAddGer = verb.getWir();
+            if (toAddGer.equals(verb.getIhr())) {
                 addVoi = false;
                 rez += " voi";
             }
-            if (toAddGer.equals(getSie())) {
+            if (toAddGer.equals(verb.getSie())) {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(this.getApparition(), toAddGer, rez + " " + getRomana()));
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
         }
         if (addVoi) {
             rez = "";
             rez += "voi";
-            toAddGer = getIhr();
-            if (toAddGer.equals(getSie())) {
+            toAddGer = verb.getIhr();
+            if (toAddGer.equals(verb.getSie())) {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(this.getApparition(), toAddGer, rez + " " + getRomana()));
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
         }
         if (addEi) {
-            list.add(new Cuvant(this.getApparition(), getSie(), "ei " + getRomana()));
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getSie(), "ei " + verb.getSource()));
         }
-        if (!getPastParticiple().equals("")) {
-            list.add(new Cuvant(this.getApparition(), getPastParticiple(), getRoTrecut()));
-            list.add(new Cuvant(this.getApparition(), getRoTrecut() + desc, getPastParticiple()));
+        if (!verb.getPastParticiple().equals("")) {
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getPastParticiple(), verb.getRoTrecut()));
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getRoTrecut() + desc, verb.getPastParticiple()));
         }
-        if (!getDoImperativ().equals("")) {
+        if (!verb.getDoImperativ().equals("")) {
 
-            list.add(new Cuvant(this.getApparition(), getRomana() + desc + " tu Imperativ",
-                    getDoImperativ()));
+            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getSource() + desc + " tu Imperativ",
+            		verb.getDoImperativ()));
         }
         return list;
     }

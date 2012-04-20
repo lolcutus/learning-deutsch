@@ -23,91 +23,88 @@ import java.util.StringTokenizer;
  */
 
 public class Substantiv extends Translation {
-    private String romanaSingular;
-    private String romanaPlural;
+    private String sourceSg;
+    private String sourcePl;
 
-    private String germanaSingular;
-    private String germanaPlural;
+    private String translationSg;
+    private String translationPl;
 
-    public String getGermanaPlural() {
-        return germanaPlural;
-    }
+    public Substantiv(int apparition, String language, String sourceSg,
+			String sourcePl, String translationSg, String translationPl) {
+		super(apparition, language);
+		this.sourceSg = sourceSg;
+		this.sourcePl = sourcePl;
+		this.translationSg = translationSg;
+		this.translationPl = translationPl;
+	}
 
-    public String getGermanaSingular() {
-        return germanaSingular;
-    }
 
-    public void setRomanaSingular(String romana) {
-        this.romanaSingular = romana;
-    }
+	public Substantiv(int apparition,String language,String sourceSg,String sourcePl, String translationSg, String translationPl, String description) {
+		super(apparition,language);
+		this.sourceSg = sourceSg;
+		this.sourcePl = sourcePl;
+		this.translationSg = translationSg;
+		this.translationPl = translationPl;
+		setDescription(description);
+	}
 
-    public void setGermanaPlural(String plural) {
-        this.germanaPlural = plural;
-    }
+	
+    public static List<Translation> build(int apparition, StringTokenizer st){
+    	
+    	 String sourceSg = st.nextToken();
+         String nextT = st.nextToken();
+         String translationSg = null;
+         if (!nextT.equals("#")) {
+        	 translationSg = nextT + " " + st.nextToken();
+         } else {
+             st.nextToken();
 
-    public void setGermanaSingular(String singular) {
-        this.germanaSingular = singular;
-    }
-
-    public String getRomanaSingular() {
-        return romanaSingular;
-    }
-
-    /**
-     * Substantiv
-     * 
-     * @param romana
-     *            String
-     * @param singular
-     *            String
-     * @param plural
-     *            String
-     */
-    public Substantiv(int apparition, StringTokenizer st) {
-        super(apparition);
-        this.romanaSingular = st.nextToken();
-        String nextT = st.nextToken();
-        if (!nextT.equals("#")) {
-            this.germanaSingular = nextT + " " + st.nextToken();
-        } else {
-            st.nextToken();
-
+         }
+         String translationPl = "";
+         String sourcePl = null;
+         String description = "";
+         if (st.hasMoreTokens()) {
+        	 translationPl = st.nextToken();
+             if (translationPl != null && !translationPl.equals("")) {
+                 translationPl = "die " + translationPl;
+             }
+             if (st.hasMoreTokens()) {
+            	 sourcePl = st.nextToken();
+                 if (st.hasMoreTokens()) {
+                	 description =st.nextToken();
+                 }
+             }
+         }
+         List<Translation> list = new ArrayList<Translation>();
+         
+    	list.add(new Substantiv(apparition,TestDialogs.LANG_RO_DE,sourceSg,sourcePl,translationSg,translationPl,description));
+        if (translationSg != null && !sourceSg.equals("")) {
+        	list.add(new Cuvant(apparition,TestDialogs.LANG_DE_RO, translationSg, sourceSg));
         }
-        this.germanaPlural = "";
-        if (st.hasMoreTokens()) {
-            this.germanaPlural = st.nextToken();
-            if (this.germanaPlural != null && !this.germanaPlural.equals("")) {
-                this.germanaPlural = "die " + this.germanaPlural;
-            }
-            if (st.hasMoreTokens()) {
-                this.romanaPlural = st.nextToken();
-                if (st.hasMoreTokens()) {
-                    this.setDescription(st.nextToken());
-                }
-            }
-        }
-
-    }
-
-    public String getRomanaPlural() {
-        return romanaPlural;
-    }
-
-    public void setRomanaPlural(String romanaPlural) {
-        this.romanaPlural = romanaPlural;
-    }
-
-    @Override
-    public List<Translation> getTranslations() {
-        List<Translation> list = new ArrayList<Translation>();
-        list.add(this);
-        if (getGermanaSingular() != null && !getGermanaSingular().equals("")) {
-            list.add(new Cuvant(this.getApparition(), getGermanaSingular(), getRomanaSingular()));
-        }
-        if (getRomanaPlural() != null && !getRomanaPlural().equals("")) {
-            list.add(new Cuvant(this.getApparition(), getGermanaPlural(), getRomanaPlural()));
+        if (sourcePl!= null && !translationPl.equals("")) {
+            list.add(new Cuvant(apparition,TestDialogs.LANG_DE_RO, translationPl, sourcePl));
         }
         return list;
     }
+
+
+	public String getSourceSg() {
+		return sourceSg;
+	}
+
+
+	public String getSourcePl() {
+		return sourcePl;
+	}
+
+
+	public String getTranslationSg() {
+		return translationSg;
+	}
+
+
+	public String getTranslationPl() {
+		return translationPl;
+	}
 
 }

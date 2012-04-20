@@ -81,7 +81,7 @@ public class VerbDialog extends TranslationDialog {
 
         JPanel panelNorth = new JPanel();
         panelNorth.setLayout(new GridLayout(1, 1));
-        panelNorth.add(new JLabel(verb.getRomana() + " " + verb.getDescription()));
+        panelNorth.add(new JLabel(verb.getSource() + " " + verb.getDescription()));
         jMainPanel.add(panelNorth, BorderLayout.NORTH);
 
         jMainPanel.add(panelSouth, BorderLayout.SOUTH);

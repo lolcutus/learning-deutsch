@@ -71,7 +71,7 @@ public class SubstantivDialog extends TranslationDialog {
 
         JPanel panelNorth = new JPanel();
         panelNorth.setLayout(new GridLayout(1, 1));
-        panelNorth.add(new JLabel(substantiv.getRomanaSingular() + " "
+        panelNorth.add(new JLabel(substantiv.getSourceSg() + " "
                 + substantiv.getDescription()));
         jMainPanel.add(panelNorth, BorderLayout.NORTH);
 
@@ -82,21 +82,21 @@ public class SubstantivDialog extends TranslationDialog {
     protected void setSolutionAction() {
         singularTF.setBackground(new Color(255, 255, 255));
         pluralTF.setBackground(new Color(255, 255, 255));
-        singularTF.setText(substantiv.getGermanaSingular());
-        pluralTF.setText(substantiv.getGermanaPlural());
+        singularTF.setText(substantiv.getTranslationSg());
+        pluralTF.setText(substantiv.getTranslationPl());
 
     }
 
     protected boolean setTestAction() {
         boolean result = false;
         int contor = 0;
-        if (singularTF.getText().equals(substantiv.getGermanaSingular())) {
+        if (singularTF.getText().equals(substantiv.getTranslationSg())) {
             singularTF.setBackground(new Color(0, 255, 0));
             contor++;
         } else {
             singularTF.setBackground(new Color(255, 0, 0));
         }
-        if (pluralTF.getText().equals(substantiv.getGermanaPlural())) {
+        if (pluralTF.getText().equals(substantiv.getTranslationPl())) {
             pluralTF.setBackground(new Color(0, 255, 0));
             contor++;
         } else {
