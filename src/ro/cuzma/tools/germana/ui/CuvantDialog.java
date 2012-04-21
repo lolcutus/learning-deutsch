@@ -1,4 +1,4 @@
-package ro.cuzma.tools.germana;
+package ro.cuzma.tools.germana.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -9,6 +9,9 @@ import java.awt.event.KeyEvent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import ro.cuzma.tools.germana.translation.Cuvant;
+import ro.cuzma.tools.germana.translation.Translation;
 
 /**
  * <p>

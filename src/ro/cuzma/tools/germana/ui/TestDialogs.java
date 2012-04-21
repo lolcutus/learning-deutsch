@@ -1,4 +1,4 @@
-package ro.cuzma.tools.germana;
+package ro.cuzma.tools.germana.ui;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,9 +7,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
+
+import ro.cuzma.tools.germana.tools.MyStringTokenizer;
+import ro.cuzma.tools.germana.tools.UTFRandomFileLineReader;
+import ro.cuzma.tools.germana.translation.Cuvant;
+import ro.cuzma.tools.germana.translation.Substantiv;
+import ro.cuzma.tools.germana.translation.Translation;
+import ro.cuzma.tools.germana.translation.Verb;
 
 public class TestDialogs {
 
@@ -99,20 +105,20 @@ public class TestDialogs {
                 String line = reader.readLine();
                 String tip = "";
                 while (line != null) {
-                    StringTokenizer st = new StringTokenizer(line, getSeparator());
+                    MyStringTokenizer mySt = new MyStringTokenizer(line, getSeparator());
                     try {
                         // int cnt = (new Integer(st.nextToken())).intValue();
                         // if (cnt > 0) {
                         List<Translation> tran = null;
-                        tip = st.nextToken();
+                        tip = mySt.nextToken();
                         if (tip.equals("subst")) {
-                            tran = Substantiv.build(1, st);
+                            tran = Substantiv.build(1, mySt);
                         }
                         if (tip.equals("cuv")) {
-                            tran = Cuvant.build(1, st);
+                            tran = Cuvant.build(1, mySt);
                         }
                         if (tip.equals("verb")) {
-                            tran = Verb.build(1, st);
+                            tran = Verb.build(1, mySt);
 
                         }
                         if (tran != null) {

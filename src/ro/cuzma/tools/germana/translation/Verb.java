@@ -1,8 +1,10 @@
-package ro.cuzma.tools.germana;
+package ro.cuzma.tools.germana.translation;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
+
+import ro.cuzma.tools.germana.tools.MyStringTokenizer;
+import ro.cuzma.tools.germana.ui.TestDialogs;
 
 public class Verb extends Translation {
     public Verb(int apparition, String language) {
@@ -112,7 +114,7 @@ public class Verb extends Translation {
     //
     // }
 
-    public static List<Translation> build(int apparition, StringTokenizer st) {
+    public static List<Translation> build(int apparition, MyStringTokenizer st) {
         Verb verb = new Verb(apparition, TestDialogs.LANG_RO_DE);
         verb.source = st.nextToken();
         verb.infinitiv = st.nextToken();

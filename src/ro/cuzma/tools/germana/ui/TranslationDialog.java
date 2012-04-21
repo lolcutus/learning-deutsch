@@ -1,4 +1,4 @@
-package ro.cuzma.tools.germana;
+package ro.cuzma.tools.germana.ui;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -16,6 +16,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+
+import ro.cuzma.tools.germana.translation.Translation;
 
 /**
  * <p>

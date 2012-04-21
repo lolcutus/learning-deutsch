@@ -1,4 +1,4 @@
-package ro.cuzma.tools.germana;
+package ro.cuzma.tools.germana.tools;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

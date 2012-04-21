@@ -1,7 +1,7 @@
 <project name="germana" basedir="." default="createjar" >
 	<property name="build" value="build"/>
 	<property name="extlibs" value="extlibs"/>
-	<property name="mainclass" value="ro.cuzma.tools.germana.TestDialogs"/>
+	<property name="mainclass" value="ro.cuzma.tools.germana..ui.TestDialogs"/>
 	<target name="clean">
 		<delete dir="${build}"/>
 	</target>
