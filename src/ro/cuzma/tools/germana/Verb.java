@@ -6,10 +6,10 @@ import java.util.StringTokenizer;
 
 public class Verb extends Translation {
     public Verb(int apparition, String language) {
-		super(apparition, language);
-	}
+        super(apparition, language);
+    }
 
-	private String source;
+    private String source;
     private String infinitiv;
     private String ich;
     private String do_;
@@ -112,26 +112,26 @@ public class Verb extends Translation {
     //
     // }
 
-    public static List<Translation> build(int apparition, StringTokenizer st){
-    	Verb verb = new Verb(apparition,TestDialogs.LANG_RO_DE);
-    	verb.source = st.nextToken();
-    	verb.infinitiv = st.nextToken();
-    	verb.ich = st.nextToken();
-    	verb.do_ = st.nextToken();
-    	verb.er = st.nextToken();
-    	verb.wir = st.nextToken();
-    	verb.ihr = st.nextToken();
-    	verb.sie = st.nextToken();
+    public static List<Translation> build(int apparition, StringTokenizer st) {
+        Verb verb = new Verb(apparition, TestDialogs.LANG_RO_DE);
+        verb.source = st.nextToken();
+        verb.infinitiv = st.nextToken();
+        verb.ich = st.nextToken();
+        verb.do_ = st.nextToken();
+        verb.er = st.nextToken();
+        verb.wir = st.nextToken();
+        verb.ihr = st.nextToken();
+        verb.sie = st.nextToken();
         if (st.hasMoreTokens()) {
-        	verb.setAuxiliar(st.nextToken());
+            verb.setAuxiliar(st.nextToken());
             if (st.hasMoreTokens()) {
-            	verb.setPastParticiple(st.nextToken());
+                verb.setPastParticiple(st.nextToken());
                 if (st.hasMoreTokens()) {
-                	verb.setRoTrecut(st.nextToken());
+                    verb.setRoTrecut(st.nextToken());
                     if (st.hasMoreTokens()) {
-                    	verb.setDoImperativ(st.nextToken());
+                        verb.setDoImperativ(st.nextToken());
                         if (st.hasMoreTokens()) {
-                        	verb.setDescription(st.nextToken());
+                            verb.setDescription(st.nextToken());
 
                         }
                     }
@@ -192,7 +192,8 @@ public class Verb extends Translation {
             addEi = false;
             rez += " ei";
         }
-        list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
+        list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
+                + verb.getSource()));
         if (addTu) {
             rez = "";
             rez += "tu";
@@ -213,7 +214,8 @@ public class Verb extends Translation {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
+                    + verb.getSource()));
         }
         if (addEl) {
             rez = "";
@@ -231,7 +233,8 @@ public class Verb extends Translation {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
+                    + verb.getSource()));
         }
         if (addNoi) {
             rez = "";
@@ -245,7 +248,8 @@ public class Verb extends Translation {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
+                    + verb.getSource()));
         }
         if (addVoi) {
             rez = "";
@@ -255,19 +259,23 @@ public class Verb extends Translation {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, toAddGer, rez + " " + verb.getSource()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
+                    + verb.getSource()));
         }
         if (addEi) {
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getSie(), "ei " + verb.getSource()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, verb.getSie(), "ei "
+                    + verb.getSource()));
         }
         if (!verb.getPastParticiple().equals("")) {
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getPastParticiple(), verb.getRoTrecut()));
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getRoTrecut() + desc, verb.getPastParticiple()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, verb
+                    .getPastParticiple(), verb.getRoTrecut()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_RO_DE, verb.getRoTrecut()
+                    + desc, verb.getPastParticiple()));
         }
         if (!verb.getDoImperativ().equals("")) {
 
-            list.add(new Cuvant(verb.getApparition(),TestDialogs.LANG_DE_RO, verb.getSource() + desc + " tu Imperativ",
-            		verb.getDoImperativ()));
+            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_RO_DE, verb.getSource()
+                    + desc + " tu Imperativ", verb.getDoImperativ()));
         }
         return list;
     }
