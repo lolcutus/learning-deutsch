@@ -1,42 +1,35 @@
 package ro.cuzma.tools.germana.ui;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import ro.cuzma.tools.germana.tools.MyStringTokenizer;
-import ro.cuzma.tools.germana.tools.UTFRandomFileLineReader;
 import ro.cuzma.tools.germana.translation.Cuvant;
+import ro.cuzma.tools.germana.translation.LearningList;
 import ro.cuzma.tools.germana.translation.Substantiv;
 import ro.cuzma.tools.germana.translation.Translation;
+import ro.cuzma.tools.germana.translation.Translation.Language;
 import ro.cuzma.tools.germana.translation.Verb;
+import ro.cuzma.tools.germana.ui.TranslationDialog.Exit;
 
 public class TestDialogs {
 
     private final static String TYPE_CONTOR = "contor";
     private final static String TYPE_ALL_CORRECT = "all_correct";
-    private final static String LANG_ALL = "all";
-    public final static String LANG_RO_DE = "ro-de";
-    public final static String LANG_DE_RO = "de-ro";
-    private List<Translation> translations = new ArrayList<Translation>();
-    Random rd = new Random();
+
     private String fileName = "words.csv";
     private int sleepTime = 5 * 60;
     private String separator = ";";
     private String type = TYPE_ALL_CORRECT;
-    private String lang = LANG_ALL;
+    private Language lang = Language.LANG_ALL;
 
-    public String getLang() {
+    public Language getLang() {
         return lang;
     }
 
-    public void setLang(String lang) {
+    public void setLang(Language lang) {
         this.lang = lang;
     }
 
@@ -83,147 +76,142 @@ public class TestDialogs {
                 }
             }
             if (args[i].equals("-lang")) {
-                td.setLang(args[++i]);
+                td.setLang(Translation.gelLanguagefromString(args[++i]));
             }
 
         }
-        /*
-         * if(args.length == 2){ td.setFileName(args[0]); } else if(args.length == 0){
-         * td.setFileName("words.csv"); } else{
-         * System.out.println("java larry.germana.TestDialogs file "); System.exit(1); }
-         */
-        td.init();
-        td.runTest();
+        LearningList ls = new LearningList(td.getFileName(), td.getLang(), td.getSeparator());
+        // td.init();
+        td.runTest(ls);
     }
 
-    private void init() {
-        try {
-            RandomAccessFile cuvinte = new RandomAccessFile(fileName, "rw");
-
-            UTFRandomFileLineReader reader = new UTFRandomFileLineReader(cuvinte);
-            try {
-                String line = reader.readLine();
-                String tip = "";
-                while (line != null) {
-                    MyStringTokenizer mySt = new MyStringTokenizer(line, getSeparator());
-                    try {
-                        // int cnt = (new Integer(st.nextToken())).intValue();
-                        // if (cnt > 0) {
-                        List<Translation> tran = null;
-                        tip = mySt.nextToken();
-                        if (tip.equals("subst")) {
-                            tran = Substantiv.build(1, mySt);
-                        }
-                        if (tip.equals("cuv")) {
-                            tran = Cuvant.build(1, mySt);
-                        }
-                        if (tip.equals("verb")) {
-                            tran = Verb.build(1, mySt);
-
-                        }
-                        if (tran != null) {
-                            for (Translation translation : tran) {
-                                if (getLang().equals(LANG_ALL)
-                                        || getLang().equals(translation.getLanguage()))
-                                    translations.add(translation);
-                            }
-                        }
-                        // }
-                    } catch (Exception ex2) {
-                        System.out.println("=============" + line + "-" + ex2.getMessage());
-                    }
-                    line = reader.readLine();
-                }
-                cuvinte.close();
-            } catch (IOException ex1) {
-            }
-        } catch (FileNotFoundException ex) {
-            /*
-             * File f = new File(fileName); try { f.createNewFile(); } catch (IOException e) { //
-             * TODO Auto-generated catch block e.printStackTrace(); }
-             */
-            System.out.println(fileName + " not found!!!");
-            System.exit(1);
-        }
-    }
-
-    public void runTest() {
+    public void runTest(LearningList ls) {
         if (getType().equals(TYPE_CONTOR)) {
-            runContor();
+            runContor(ls);
         } else if (getType().equals(TYPE_ALL_CORRECT)) {
-            runAllCorrect();
+            runAllCorrect(ls);
         }
     }
 
-    private void runAllCorrect() {
-        List<Translation> trans = translations;
-
+    private void runAllCorrect(LearningList ls) {
         boolean runThis = true;
         while (runThis) {
-            List<Translation> tmpTrans = new ArrayList<Translation>();
-            if (trans.size() > 0) {
-                Collections.shuffle(trans);
-                int total = trans.size();
-                int all = trans.size();
-                int wrong = 0;
-                int answers = 0;
-                for (Translation tr : trans) {
-                    TranslationDialog sbD = null;
-                    if (tr instanceof Substantiv) {
-                        sbD = new SubstantivDialog(tr);
-                    } else if (tr instanceof Cuvant) {
-                        sbD = new CuvantDialog(tr);
-                    } else if (tr instanceof Verb) {
-                        sbD = new VerbDialogNew(tr);
-                    }
-
-                    if (sbD != null) {
-                        // sbD.setFocusTraversalPolicy();
-                        int good = all - total - wrong;
-
-                        sbD.setTitle("All correct " + answers + "/" + total + "/" + all + " good: "
-                                + good + " wrong: " + wrong);
-                        total--;
-                        sbD.setVisible(true);
-                        answers++;
-                        if (!sbD.isFirst()) {
-                            wrong++;
-                            tmpTrans.add(tr);
-                        }
-                    }
-                    try {
-                        Thread.sleep(this.getSleepTime() * 1000);
-                    } catch (InterruptedException ex) {
-                    }
-
+            Translation translation = ls.getNext();
+            while (translation != null) {
+                TranslationDialog sbD = null;
+                if (translation instanceof Substantiv) {
+                    sbD = new SubstantivDialog(translation);
+                } else if (translation instanceof Cuvant) {
+                    sbD = new CuvantDialog(translation);
+                } else if (translation instanceof Verb) {
+                    sbD = new VerbDialogNew(translation);
                 }
-                if (tmpTrans.size() > 0) {
-                    trans = tmpTrans;
-                    tmpTrans = new ArrayList<Translation>();
-                } else {
-                    if (JOptionPane.showConfirmDialog(null, "Would you like to restart?",
-                            "An Inane Question", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
+                if (sbD != null) {
+                    // sbD.setFocusTraversalPolicy();
+                    int remaining = ls.getCurrentList().length - ls.getCurrentPosition() + 1;
+                    int all = ls.getCurrentList().length;
+                    int current = ls.getCurrentPosition() - 1;
+                    sbD.setTitle("All correct " + current + "/" + remaining + "/" + all + " good: "
+                            + ls.getGoodAnswers() + " wrong: " + ls.getBadAnswers());
+                    sbD.setVisible(true);
+                    if (sbD.exit() == Exit.EXIT) {
+                        ls.save();
                         runThis = false;
+                        break;
+                    } else if (sbD.exit() == Exit.RESET) {
+                        ls.reset();
                     } else {
-                        trans = translations;
+                        ls.processresponse(sbD.isFirstCorrectAnswer());
                     }
                 }
+                try {
+                    Thread.sleep(this.getSleepTime() * 1000);
+                } catch (InterruptedException ex) {
+                }
+                translation = ls.getNext();
+            }
 
+            if (runThis
+                    && JOptionPane.showConfirmDialog(null, "Would you like to restart?",
+                            "An Inane Question", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
+                runThis = false;
+            } else {
+                ls.reset();
             }
         }
 
     }
 
-    private void runContor() {
+    // private void runAllCorrect(LearningList ls) {
+    // List<Translation> trans = translations;
+    //
+    // boolean runThis = true;
+    // while (runThis) {
+    // List<Translation> tmpTrans = new ArrayList<Translation>();
+    // if (trans.size() > 0) {
+    // Collections.shuffle(trans);
+    // int total = trans.size();
+    // int all = trans.size();
+    // int wrong = 0;
+    // int answers = 0;
+    // for (Translation tr : trans) {
+    // TranslationDialog sbD = null;
+    // if (tr instanceof Substantiv) {
+    // sbD = new SubstantivDialog(tr);
+    // } else if (tr instanceof Cuvant) {
+    // sbD = new CuvantDialog(tr);
+    // } else if (tr instanceof Verb) {
+    // sbD = new VerbDialogNew(tr);
+    // }
+    //
+    // if (sbD != null) {
+    // // sbD.setFocusTraversalPolicy();
+    // int good = all - total - wrong;
+    //
+    // sbD.setTitle("All correct " + answers + "/" + total + "/" + all + " good: "
+    // + good + " wrong: " + wrong);
+    // total--;
+    // sbD.setVisible(true);
+    // answers++;
+    // if (!sbD.isFirstCorrectAnswer()) {
+    // wrong++;
+    // tmpTrans.add(tr);
+    // }
+    // }
+    // try {
+    // Thread.sleep(this.getSleepTime() * 1000);
+    // } catch (InterruptedException ex) {
+    // }
+    //
+    // }
+    // if (tmpTrans.size() > 0) {
+    // trans = tmpTrans;
+    // tmpTrans = new ArrayList<Translation>();
+    // } else {
+    // if (JOptionPane.showConfirmDialog(null, "Would you like to restart?",
+    // "An Inane Question", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
+    // runThis = false;
+    // } else {
+    // trans = translations;
+    // }
+    // }
+    //
+    // }
+    // }
+    //
+    // }
+
+    private void runContor(LearningList ls) {
         boolean runThis = true;
         List<Translation> translationContor = new ArrayList<Translation>();
-        if (translations.size() > 0) {
-            for (Translation tr : translations) {
-                for (int i = 0; i < tr.getApparition(); i++) {
-                    translationContor.add(tr);
-                }
+        Translation tran = null;
+        for (int j = 0; j < ls.getCurrentList().length; j++) {
+            tran = ls.getCurrentList()[j];
+            for (int i = 0; i < tran.getApparition(); i++) {
+                translationContor.add(tran);
             }
         }
+
         while (runThis) {
             runThis = false;
 

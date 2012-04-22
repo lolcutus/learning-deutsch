@@ -19,28 +19,12 @@ import javax.swing.JPanel;
 
 import ro.cuzma.tools.germana.translation.Translation;
 
-/**
- * <p>
- * Title:
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Copyright: Copyright (c) 2003
- * </p>
- * <p>
- * Company:
- * </p>
- * 
- * @author not attributable
- * @version 1.0
- */
-
 public abstract class TranslationDialog extends JDialog {
-    /**
-     * 
-     */
+
+    public enum Exit {
+        EXIT, RESET, NOTHING
+    }
+
     private static final long serialVersionUID = 1L;
     // protected String specialChars = "ü 0252 ä 0228 ö 0246 ß 0223 \u00C3 0195";
     JPanel jMainPanel = new JPanel();
@@ -48,12 +32,14 @@ public abstract class TranslationDialog extends JDialog {
     JMenuBar jFile = new JMenuBar();
     JMenu jMenuFile = new JMenu();
     JMenuItem jMenuFileClose = new JMenuItem();
+    JMenuItem jMenuFileReset = new JMenuItem();
 
     JButton btSolution = new JButton("Solution");
-    JButton btClose = new JButton("Close");
+    JButton btNext = new JButton("Next");
     JButton btTest = new JButton("Test");
     JPanel panelSouth = new JPanel();
-    boolean first = true;
+    boolean firstCorrectAnswer = true;
+    private Exit exit = Exit.NOTHING;
     protected static Point startPoint = new Point(550, 450);
 
     public TranslationDialog(Translation tr) throws HeadlessException {
@@ -67,7 +53,7 @@ public abstract class TranslationDialog extends JDialog {
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent we) {
                 close();
-                System.exit(0);
+                exit = Exit.EXIT;
             }
         });
         createMenu();
@@ -87,11 +73,19 @@ public abstract class TranslationDialog extends JDialog {
         jMenuFileClose.setText("Close");
         jMenuFileClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                close();
+                exit = Exit.EXIT;
             }
         });
-
+        jMenuFileReset.setText("Reset");
+        jMenuFileReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                close();
+                exit = Exit.RESET;
+            }
+        });
         jFile.add(jMenuFile);
+        jMenuFile.add(jMenuFileReset);
         jMenuFile.add(jMenuFileClose);
         this.setJMenuBar(jFile);
     }
@@ -100,17 +94,17 @@ public abstract class TranslationDialog extends JDialog {
         panelSouth.setLayout(new GridLayout(1, 3));
         panelSouth.add(btTest);
         panelSouth.add(btSolution);
-        panelSouth.add(btClose);
-        btClose.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelSouth.add(btNext);
+        btNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-                first = false;
+                firstCorrectAnswer = false;
                 close();
             }
         });
-        btClose.addKeyListener(new java.awt.event.KeyAdapter() {
+        btNext.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    first = false;
+                    firstCorrectAnswer = false;
                     close();
                 }
             }
@@ -121,7 +115,7 @@ public abstract class TranslationDialog extends JDialog {
                     if (setTestAction()) {
                         close();
                     } else {
-                        first = false;
+                        firstCorrectAnswer = false;
                     }
 
                 }
@@ -132,7 +126,7 @@ public abstract class TranslationDialog extends JDialog {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     setSolutionAction();
-                    first = false;
+                    firstCorrectAnswer = false;
                 }
             }
         });
@@ -142,7 +136,7 @@ public abstract class TranslationDialog extends JDialog {
                 if (setTestAction()) {
                     close();
                 } else {
-                    first = false;
+                    firstCorrectAnswer = false;
                 }
             }
         });
@@ -150,7 +144,7 @@ public abstract class TranslationDialog extends JDialog {
         btSolution.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 setSolutionAction();
-                first = false;
+                firstCorrectAnswer = false;
             }
         });
 
@@ -165,8 +159,12 @@ public abstract class TranslationDialog extends JDialog {
 
     protected abstract boolean setTestAction();
 
-    public boolean isFirst() {
-        return first;
+    public boolean isFirstCorrectAnswer() {
+        return firstCorrectAnswer;
+    }
+
+    public Exit exit() {
+        return exit;
     }
 
 }

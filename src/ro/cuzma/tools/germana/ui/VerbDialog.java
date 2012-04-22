@@ -58,7 +58,7 @@ public class VerbDialog extends TranslationDialog {
                     if (setTestAction()) {
                         close();
                     } else {
-                        first = false;
+                        firstCorrectAnswer = false;
                     }
                 }
             }
@@ -211,8 +211,8 @@ public class VerbDialog extends TranslationDialog {
             } else if (aComponent.equals(btTest)) {
                 return btSolution;
             } else if (aComponent.equals(btSolution)) {
-                return btClose;
-            } else if (aComponent.equals(btClose)) {
+                return btNext;
+            } else if (aComponent.equals(btNext)) {
                 return ichTF;
             }
             return ichTF;
@@ -220,7 +220,7 @@ public class VerbDialog extends TranslationDialog {
 
         public Component getComponentBefore(Container focusCycleRoot, Component aComponent) {
             if (aComponent.equals(ichTF)) {
-                return btClose;
+                return btNext;
             } else if (aComponent.equals(doTF)) {
                 return ichTF;
             } else if (aComponent.equals(erTF)) {
@@ -231,7 +231,7 @@ public class VerbDialog extends TranslationDialog {
                 return wirTF;
             } else if (aComponent.equals(sieTF)) {
                 return ihrTF;
-            } else if (aComponent.equals(btClose)) {
+            } else if (aComponent.equals(btNext)) {
                 return btSolution;
             } else if (aComponent.equals(btSolution)) {
                 return btTest;
@@ -250,7 +250,7 @@ public class VerbDialog extends TranslationDialog {
         }
 
         public Component getLastComponent(Container focusCycleRoot) {
-            return btClose;
+            return btNext;
         }
 
         public Component getFirstComponent(Container focusCycleRoot) {

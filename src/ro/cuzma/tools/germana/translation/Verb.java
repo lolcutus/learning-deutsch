@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ro.cuzma.tools.germana.tools.MyStringTokenizer;
-import ro.cuzma.tools.germana.ui.TestDialogs;
 
 public class Verb extends Translation {
-    public Verb(int apparition, String language) {
-        super(apparition, language);
+    public static String ID = "verb";
+
+    public Verb(int apparition, Language language, Tested tested) {
+        super(apparition, language, tested);
     }
 
     private String source;
@@ -101,21 +102,8 @@ public class Verb extends Translation {
         return wir;
     }
 
-    // public Verb(String romana, String infinitiv, String ich, String do_, String er, String wir,
-    // String ihr, String sie) {
-    // this.romana = romana;
-    // this.infinitiv = infinitiv;
-    // this.ich = ich;
-    // this.do_ = do_;
-    // this.er = er;
-    // this.wir = wir;
-    // this.ihr = ihr;
-    // this.sie = sie;
-    //
-    // }
-
     public static List<Translation> build(int apparition, MyStringTokenizer st) {
-        Verb verb = new Verb(apparition, TestDialogs.LANG_RO_DE);
+        Verb verb = new Verb(apparition, Language.LANG_RO_DE, Tested.NOTTESTED);
         verb.source = st.nextToken();
         verb.infinitiv = st.nextToken();
         verb.ich = st.nextToken();
@@ -124,6 +112,8 @@ public class Verb extends Translation {
         verb.wir = st.nextToken();
         verb.ihr = st.nextToken();
         verb.sie = st.nextToken();
+        Language language = Language.LANG_ALL;
+        Tested tested = Tested.NOTTESTED;
         if (st.hasMoreTokens()) {
             verb.setAuxiliar(st.nextToken());
             if (st.hasMoreTokens()) {
@@ -134,12 +124,19 @@ public class Verb extends Translation {
                         verb.setDoImperativ(st.nextToken());
                         if (st.hasMoreTokens()) {
                             verb.setDescription(st.nextToken());
-
+                            if (st.hasMoreTokens()) {
+                                language = Translation.gelLanguagefromString(st.nextToken());
+                                if (st.hasMoreTokens()) {
+                                    tested = gelTestedfromString(st.nextToken());
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+        verb.setLanguage(language);
+        verb.setTested(tested);
         return getCuvinte(verb);
 
     }
@@ -159,47 +156,26 @@ public class Verb extends Translation {
     private static List<Translation> getCuvinte(Verb verb) {
         List<Translation> list = new ArrayList<Translation>();
         list.add(verb);
+        if (verb.getLanguage() == Language.LANG_ALL) {
+            verb.setLanguage(Language.LANG_RO_DE);
+            boolean addTu = true;
+            boolean addEl = true;
+            boolean addNoi = true;
+            boolean addVoi = true;
+            boolean addEi = true;
 
-        boolean addTu = true;
-        boolean addEl = true;
-        boolean addNoi = true;
-        boolean addVoi = true;
-        boolean addEi = true;
+            String desc = "";
+            if (verb.getDescription() != null && !verb.getDescription().isEmpty()) {
+                desc = " (" + verb.getDescription() + ")";
+            }
 
-        String desc = "";
-        if (verb.getDescription() != null && !verb.getDescription().isEmpty()) {
-            desc = " (" + verb.getDescription() + ")";
-        }
-
-        String rez = "";
-        rez += "eu";
-        String toAddGer = verb.getIch();
-        if (toAddGer.equals(verb.getDo_())) {
-            addTu = false;
-            rez += " tu";
-        }
-        if (toAddGer.equals(verb.getEr())) {
-            addEl = false;
-            rez += " el";
-        }
-        if (toAddGer.equals(verb.getWir())) {
-            addNoi = false;
-            rez += " noi";
-        }
-        if (toAddGer.equals(verb.getIhr())) {
-            addVoi = false;
-            rez += " voi";
-        }
-        if (toAddGer.equals(verb.getSie())) {
-            addEi = false;
-            rez += " ei";
-        }
-        list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
-                + verb.getSource()));
-        if (addTu) {
-            rez = "";
-            rez += "tu";
-            toAddGer = verb.getDo_();
+            String rez = "";
+            rez += "eu";
+            String toAddGer = verb.getIch();
+            if (toAddGer.equals(verb.getDo_())) {
+                addTu = false;
+                rez += " tu";
+            }
             if (toAddGer.equals(verb.getEr())) {
                 addEl = false;
                 rez += " el";
@@ -216,68 +192,91 @@ public class Verb extends Translation {
                 addEi = false;
                 rez += " ei";
             }
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
-                    + verb.getSource()));
-        }
-        if (addEl) {
-            rez = "";
-            rez += "el";
-            toAddGer = verb.getEr();
-            if (toAddGer.equals(verb.getWir())) {
-                addNoi = false;
-                rez += " noi";
+            list.add(new Cuvant(verb.getApparition(), Language.LANG_DE_RO, toAddGer, rez + " "
+                    + verb.getSource(), Tested.NOTTESTED));
+            if (addTu) {
+                rez = "";
+                rez += "tu";
+                toAddGer = verb.getDo_();
+                if (toAddGer.equals(verb.getEr())) {
+                    addEl = false;
+                    rez += " el";
+                }
+                if (toAddGer.equals(verb.getWir())) {
+                    addNoi = false;
+                    rez += " noi";
+                }
+                if (toAddGer.equals(verb.getIhr())) {
+                    addVoi = false;
+                    rez += " voi";
+                }
+                if (toAddGer.equals(verb.getSie())) {
+                    addEi = false;
+                    rez += " ei";
+                }
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_DE_RO, toAddGer, rez + " "
+                        + verb.getSource(), Tested.NOTTESTED));
             }
-            if (toAddGer.equals(verb.getIhr())) {
-                addVoi = false;
-                rez += " voi";
+            if (addEl) {
+                rez = "";
+                rez += "el";
+                toAddGer = verb.getEr();
+                if (toAddGer.equals(verb.getWir())) {
+                    addNoi = false;
+                    rez += " noi";
+                }
+                if (toAddGer.equals(verb.getIhr())) {
+                    addVoi = false;
+                    rez += " voi";
+                }
+                if (toAddGer.equals(verb.getSie())) {
+                    addEi = false;
+                    rez += " ei";
+                }
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_DE_RO, toAddGer, rez + " "
+                        + verb.getSource(), Tested.NOTTESTED));
             }
-            if (toAddGer.equals(verb.getSie())) {
-                addEi = false;
-                rez += " ei";
+            if (addNoi) {
+                rez = "";
+                rez += "noi";
+                toAddGer = verb.getWir();
+                if (toAddGer.equals(verb.getIhr())) {
+                    addVoi = false;
+                    rez += " voi";
+                }
+                if (toAddGer.equals(verb.getSie())) {
+                    addEi = false;
+                    rez += " ei";
+                }
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_DE_RO, toAddGer, rez + " "
+                        + verb.getSource(), Tested.NOTTESTED));
             }
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
-                    + verb.getSource()));
-        }
-        if (addNoi) {
-            rez = "";
-            rez += "noi";
-            toAddGer = verb.getWir();
-            if (toAddGer.equals(verb.getIhr())) {
-                addVoi = false;
-                rez += " voi";
+            if (addVoi) {
+                rez = "";
+                rez += "voi";
+                toAddGer = verb.getIhr();
+                if (toAddGer.equals(verb.getSie())) {
+                    addEi = false;
+                    rez += " ei";
+                }
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_DE_RO, toAddGer, rez + " "
+                        + verb.getSource(), Tested.NOTTESTED));
             }
-            if (toAddGer.equals(verb.getSie())) {
-                addEi = false;
-                rez += " ei";
+            if (addEi) {
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_DE_RO, verb.getSie(), "ei "
+                        + verb.getSource(), Tested.NOTTESTED));
             }
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
-                    + verb.getSource()));
-        }
-        if (addVoi) {
-            rez = "";
-            rez += "voi";
-            toAddGer = verb.getIhr();
-            if (toAddGer.equals(verb.getSie())) {
-                addEi = false;
-                rez += " ei";
+            if (!verb.getPastParticiple().equals("")) {
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_DE_RO, verb
+                        .getPastParticiple(), verb.getRoTrecut(), Tested.NOTTESTED));
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_RO_DE, verb.getRoTrecut()
+                        + desc, verb.getPastParticiple(), Tested.NOTTESTED));
             }
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, toAddGer, rez + " "
-                    + verb.getSource()));
-        }
-        if (addEi) {
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, verb.getSie(), "ei "
-                    + verb.getSource()));
-        }
-        if (!verb.getPastParticiple().equals("")) {
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_DE_RO, verb
-                    .getPastParticiple(), verb.getRoTrecut()));
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_RO_DE, verb.getRoTrecut()
-                    + desc, verb.getPastParticiple()));
-        }
-        if (!verb.getDoImperativ().equals("")) {
+            if (!verb.getDoImperativ().equals("")) {
 
-            list.add(new Cuvant(verb.getApparition(), TestDialogs.LANG_RO_DE, verb.getSource()
-                    + desc + " tu Imperativ", verb.getDoImperativ()));
+                list.add(new Cuvant(verb.getApparition(), Language.LANG_RO_DE, verb.getSource()
+                        + desc + " tu Imperativ", verb.getDoImperativ(), Tested.NOTTESTED));
+            }
         }
         return list;
     }
@@ -296,5 +295,35 @@ public class Verb extends Translation {
 
     public void setRoTrecut(String roTrecut) {
         this.roTrecut = roTrecut;
+    }
+
+    @Override
+    public StringBuilder internal_getCsvString(StringBuilder sb, String separator) {
+        sb.append(ID);
+        sb.append(separator);
+        sb.append(source);
+        sb.append(separator);
+        sb.append(infinitiv);
+        sb.append(separator);
+        sb.append(ich);
+        sb.append(separator);
+        sb.append(do_);
+        sb.append(separator);
+        sb.append(er);
+        sb.append(separator);
+        sb.append(wir);
+        sb.append(separator);
+        sb.append(ihr);
+        sb.append(separator);
+        sb.append(sie);
+        sb.append(separator);
+        sb.append(auxiliar);
+        sb.append(separator);
+        sb.append(pastParticiple);
+        sb.append(separator);
+        sb.append(roTrecut);
+        sb.append(separator);
+        sb.append(doImperativ);
+        return sb;
     }
 }

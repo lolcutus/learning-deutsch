@@ -59,7 +59,7 @@ public class CuvantDialog extends TranslationDialog {
                     if (setTestAction()) {
                         close();
                     } else {
-                        first = false;
+                        firstCorrectAnswer = false;
                     }
                 }
             }

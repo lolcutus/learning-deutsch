@@ -61,7 +61,7 @@ public class SubstantivDialog extends TranslationDialog {
                     if (setTestAction()) {
                         close();
                     } else {
-                        first = false;
+                        firstCorrectAnswer = false;
                     }
                 }
             }
@@ -102,7 +102,8 @@ public class SubstantivDialog extends TranslationDialog {
         } else {
             singularTF.setBackground(new Color(255, 0, 0));
         }
-        if (pluralTF.getText().equals(substantiv.getTranslationPl())) {
+        if (pluralTF.getText()
+                .equals(substantiv.getArticol() + " " + substantiv.getTranslationPl())) {
             pluralTF.setBackground(new Color(0, 255, 0));
             contor++;
         } else {
