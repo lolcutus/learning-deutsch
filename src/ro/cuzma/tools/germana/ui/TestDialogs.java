@@ -111,8 +111,10 @@ public class TestDialogs {
                     int remaining = ls.getCurrentList().length - ls.getCurrentPosition() + 1;
                     int all = ls.getCurrentList().length;
                     int current = ls.getCurrentPosition() - 1;
+                    int percent = 100 * ls.getGoodAnswers() / all;
                     sbD.setTitle("All correct " + current + "/" + remaining + "/" + all + " good: "
-                            + ls.getGoodAnswers() + " wrong: " + ls.getBadAnswers());
+                            + ls.getGoodAnswers() + "(" + percent + "%) wrong: "
+                            + ls.getBadAnswers());
                     sbD.setVisible(true);
                     if (sbD.exit() == Exit.EXIT) {
                         ls.save();
