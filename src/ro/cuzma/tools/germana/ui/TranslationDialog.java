@@ -22,7 +22,7 @@ import ro.cuzma.tools.germana.translation.Translation;
 public abstract class TranslationDialog extends JDialog {
 
     public enum Exit {
-        EXIT, RESET, NOTHING
+        EXIT, RESET, NOTHING, SAVE
     }
 
     private static final long serialVersionUID = 1L;
@@ -33,6 +33,7 @@ public abstract class TranslationDialog extends JDialog {
     JMenu jMenuFile = new JMenu();
     JMenuItem jMenuFileClose = new JMenuItem();
     JMenuItem jMenuFileReset = new JMenuItem();
+    JMenuItem jMenuFileSave = new JMenuItem();
 
     JButton btSolution = new JButton("Solution");
     JButton btNext = new JButton("Next");
@@ -84,8 +85,16 @@ public abstract class TranslationDialog extends JDialog {
                 exit = Exit.RESET;
             }
         });
+        jMenuFileSave.setText("Save");
+        jMenuFileSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                close();
+                exit = Exit.SAVE;
+            }
+        });
         jFile.add(jMenuFile);
         jMenuFile.add(jMenuFileReset);
+        jMenuFile.add(jMenuFileSave);
         jMenuFile.add(jMenuFileClose);
         this.setJMenuBar(jFile);
     }

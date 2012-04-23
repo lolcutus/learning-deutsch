@@ -111,7 +111,12 @@ public class TestDialogs {
                     int remaining = ls.getCurrentList().length - ls.getCurrentPosition() + 1;
                     int all = ls.getCurrentList().length;
                     int current = ls.getCurrentPosition() - 1;
-                    int percent = 100 * ls.getGoodAnswers() / all;
+
+                    int percent = 0;
+                    if (ls.getGoodAnswers() + ls.getBadAnswers() != 0) {
+                        percent = 100 * ls.getGoodAnswers()
+                                / (ls.getGoodAnswers() + ls.getBadAnswers());
+                    }
                     sbD.setTitle("All correct " + current + "/" + remaining + "/" + all + " good: "
                             + ls.getGoodAnswers() + "(" + percent + "%) wrong: "
                             + ls.getBadAnswers());
@@ -122,6 +127,8 @@ public class TestDialogs {
                         break;
                     } else if (sbD.exit() == Exit.RESET) {
                         ls.reset();
+                    } else if (sbD.exit() == Exit.SAVE) {
+                        ls.save();
                     } else {
                         ls.processresponse(sbD.isFirstCorrectAnswer());
                     }
@@ -133,12 +140,13 @@ public class TestDialogs {
                 translation = ls.getNext();
             }
 
-            if (runThis
-                    && JOptionPane.showConfirmDialog(null, "Would you like to restart?",
-                            "An Inane Question", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
-                runThis = false;
-            } else {
-                ls.reset();
+            if (runThis) {
+                if (JOptionPane.showConfirmDialog(null, "Would you like to restart?",
+                        "An Inane Question", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
+                    runThis = false;
+                } else {
+                    ls.reset();
+                }
             }
         }
 
