@@ -103,11 +103,24 @@ public class Substantiv extends Translation {
         return translationSg;
     }
 
+    public String getTranslationSgWithArticle() {
+
+        if (translationSg != null && !translationSg.isEmpty())
+            return articol + " " + translationSg;
+        return translationSg;
+    }
+
     public String getArticol() {
         return articol;
     }
 
     public String getTranslationPl() {
+        return translationPl;
+    }
+
+    public String getTranslationPlWithArticle() {
+        if (translationPl != null && !translationPl.isEmpty())
+            return "die " + translationPl;
         return translationPl;
     }
 

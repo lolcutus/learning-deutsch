@@ -1,17 +1,3 @@
-subst,apelul,der,Anruf,Anrufe,apelurile,convorbire,LANG_RO_DE,NOTTESTED
-cuv,a completa tu Imperativ,ergänze,,LANG_RO_DE,NOTTESTED
-cuv,adevarat,richtig,,LANG_RO_DE,NOTTESTED
-cuv,ergänzt,tu el voi a completa,,LANG_DE_RO,NOTTESTED
-cuv,am completat, ergänzt,,LANG_RO_DE,NOTTESTED
-cuv,acum,jetzt,,LANG_RO_DE,NOTTESTED
-cuv,der Anruf,apelul,,LANG_DE_RO,NOTTESTED
-cuv,die Anrufe,apelurile,,LANG_DE_RO,NOTTESTED
-cuv,jetzt,acum,,LANG_DE_RO,NOTTESTED
-cuv,die Jahre,anii,,LANG_DE_RO,NOTTESTED
-verb,a completa,ergänzen,ergänze,ergänzt,ergänzt,ergänzen,ergänzt,ergänzen,,ergänzt,am completat,ergänze,,LANG_RO_DE,NOTTESTED
-cuv,ergänze,eu a completa,,LANG_DE_RO,NOTTESTED
-cuv, ergänzt,am completat,,LANG_DE_RO,NOTTESTED
-cuv,richtig,adevarat,,LANG_DE_RO,NOTTESTED
-subst,anul,das,Jahr,Jahre,anii,,LANG_RO_DE,NOTTESTED
-cuv,ergänzen,noi ei a completa,,LANG_DE_RO,NOTTESTED
-cuv,das Jahr,anul,,LANG_DE_RO,OK
+cuv,am completat, ergänzt,,LANG_RO_DE,NOTOK
+cuv,acum,jetzt,,LANG_RO_DE,OK
+subst,urechea,das,Ohr,Ohren,urechile,,LANG_RO_DE,NOTTESTED

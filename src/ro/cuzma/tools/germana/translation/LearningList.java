@@ -152,7 +152,6 @@ public class LearningList {
             }
         } catch (FileNotFoundException ex) {
             System.out.println(fileName + " not found!!!");
-            System.exit(1);
         }
         Collections.shuffle(translations);
         return translations.toArray(new Translation[translations.size()]);
@@ -172,6 +171,12 @@ public class LearningList {
         }
         setCurrentList();
 
+    }
+
+    public boolean isEmpty() {
+        if (initialList.length > 0)
+            return false;
+        return true;
     }
 
 }

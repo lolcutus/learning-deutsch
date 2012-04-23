@@ -1,0 +1,659 @@
+cuv,der Zahn,dintele,,LANG_DE_RO,OK
+cuv,das Meer,marea,,LANG_DE_RO,OK
+cuv,mindestens,cel putin,,LANG_DE_RO,OK
+cuv,din,aus,,LANG_RO_DE,NOTTESTED
+cuv,gebt,voi a da,,LANG_DE_RO,NOTTESTED
+cuv,die Minute,minutul,,LANG_DE_RO,OK
+cuv,für,pentru,,LANG_DE_RO,OK
+cuv,bin geworden,am devenit,,LANG_DE_RO,OK
+verb,a da,geben,gebe,gibst,gibt,geben,gebt,geben,habe,gegeben,am dat,gib,,LANG_RO_DE,NOTTESTED
+cuv,bringe,eu a aduce,,LANG_DE_RO,OK
+cuv,vor,in fata,,LANG_DE_RO,NOTOK
+cuv,am alergat,bin gelaufen,,LANG_RO_DE,NOTTESTED
+cuv,komme,eu a veni,,LANG_DE_RO,OK
+cuv,bekommst,tu a primi,,LANG_DE_RO,OK
+cuv,habe gewußt,am stiut,,LANG_DE_RO,NOTTESTED
+cuv,die Sommer,verile,,LANG_DE_RO,NOTTESTED
+verb,a deveni,werden,werde,wirst,wird,werden,werdet,werden,bin,geworden,am devenit,werd,,LANG_RO_DE,NOTTESTED
+verb,a sta,bleiben,bleibe,bleibst,bleibt,bleiben,bleibt,bleiben,bin,geblieben,am ramas,bleib,a sta(a ramane),LANG_RO_DE,NOTTESTED
+cuv,findest,tu a gasi,,LANG_DE_RO,OK
+subst,urechea,das,Ohr,Ohren,urechile,,LANG_RO_DE,NOTTESTED
+verb,a avea,haben,habe,hast,hat,haben,habt,haben,habe,gehabt,am avut,habe,,LANG_RO_DE,NOTTESTED
+cuv,glauben,noi ei a crede,,LANG_DE_RO,NOTTESTED
+cuv,werde,eu a deveni,,LANG_DE_RO,NOTTESTED
+subst,minutul,die,Minute,Minuten,minutele,,LANG_RO_DE,NOTTESTED
+cuv,am conectat,habe gebunden,,LANG_RO_DE,NOTTESTED
+cuv,am stiut,habe gewußt,,LANG_RO_DE,NOTTESTED
+verb,a vrea,wollen,will,willst,will,wollen,wollt,wollen,habe, gewollt,am vrut,wolle,,LANG_RO_DE,NOTTESTED
+verb,a vedea,sehen,sehe,siehst,sieht,sehen,seht,sehen,habe,gesehen,am vazut,sieh,,LANG_RO_DE,NOTTESTED
+cuv,am avut,habe gehabt,,LANG_RO_DE,NOTTESTED
+cuv,separat,getrennt,,LANG_RO_DE,NOTTESTED
+subst,momentul,das,Moment,Momente,momentele,,LANG_RO_DE,NOTTESTED
+cuv, ergänzt,am completat,,LANG_DE_RO,OK
+verb,a lua,nehmen,nehme,nimmst,nimmt,nehmen,nehmt,nehmen,habe,genommen,am luat,nimm,,LANG_RO_DE,NOTTESTED
+cuv,unter,dedesupt,,LANG_DE_RO,NOTTESTED
+cuv,habe ersetzt,am inlocuit,,LANG_DE_RO,NOTTESTED
+cuv,habe bekommen,am primit,,LANG_DE_RO,NOTTESTED
+cuv,als,ca,,LANG_DE_RO,OK
+cuv,beginnen,noi ei a incepe,,LANG_DE_RO,OK
+cuv,bleibe,eu a sta,,LANG_DE_RO,NOTTESTED
+cuv,kennst,tu a cunoaste,,LANG_DE_RO,OK
+cuv,bekommen,noi ei a primi,,LANG_DE_RO,OK
+cuv,der Monat,luna,,LANG_DE_RO,OK
+subst,lucrul,die,Sache,Sachen,lucrurile,,LANG_RO_DE,NOTTESTED
+cuv,die Kette,lantisorul,,LANG_DE_RO,NOTOK
+cuv,am vazut,habe gesehen,,LANG_RO_DE,NOTTESTED
+cuv,a trebui tu Imperativ,müss,,LANG_RO_DE,NOTTESTED
+cuv,kennen,noi ei a cunoaste,,LANG_DE_RO,OK
+cuv,wichtig,important,,LANG_DE_RO,OK
+cuv,die Ohren,urechile,,LANG_DE_RO,OK
+subst,iarna,der,Winter,Winter,iernile,,LANG_RO_DE,NOTTESTED
+cuv,auf,pe,,LANG_DE_RO,OK
+subst,copilul,das,Kind,Kinder,copiii,,LANG_RO_DE,NOTTESTED
+cuv,de cand,seit,pentru,LANG_RO_DE,NOTTESTED
+cuv,ca,als,,LANG_RO_DE,NOTTESTED
+cuv,sau,oder,,LANG_RO_DE,NOTTESTED
+subst,planta,die,Pflanze,Pflanzen,plantele,,LANG_RO_DE,NOTTESTED
+cuv,die Hände,mainile,,LANG_DE_RO,OK
+cuv,impreuna,zusammen,,LANG_RO_DE,NOTTESTED
+cuv,lat,breit,larg,LANG_RO_DE,NOTTESTED
+cuv,die Packungen,pachetele,,LANG_DE_RO,NOTTESTED
+cuv,a ajuta tu Imperativ,hilf,,LANG_RO_DE,NOTTESTED
+cuv,die Brille,ochelarul,,LANG_DE_RO,OK
+cuv,langweilig,plictisit,,LANG_DE_RO,OK
+cuv,oft,des,,LANG_DE_RO,OK
+cuv,ceva,etwas,,LANG_RO_DE,NOTTESTED
+cuv,unter,jos,,LANG_DE_RO,NOTOK
+subst,mingea,der,Ball,Bälle,mingile,,LANG_RO_DE,NOTTESTED
+cuv,vergessen,noi ei a uita,,LANG_DE_RO,OK
+cuv,am schimbat,habe geändert,,LANG_RO_DE,NOTTESTED
+cuv,zu,la,,LANG_DE_RO,OK
+cuv,fara,ohne,,LANG_RO_DE,NOTTESTED
+cuv,die Pflanzen,plantele,,LANG_DE_RO,NOTTESTED
+cuv,am stat (in picioare),habe gestanden,,LANG_RO_DE,NOTTESTED
+cuv,am vrut,habe  gewollt,,LANG_RO_DE,NOTTESTED
+cuv,a zice tu Imperativ,sage,,LANG_RO_DE,NOTTESTED
+cuv,am ramas (a sta(a ramane)),bin geblieben,,LANG_RO_DE,NOTTESTED
+cuv,wollen,noi ei a vrea,,LANG_DE_RO,OK
+cuv,will,eu el a vrea,,LANG_DE_RO,OK
+cuv,wie,cum,,LANG_DE_RO,OK
+cuv,die Grenzen,granitele,,LANG_DE_RO,OK
+cuv,die Tochter,fica,,LANG_DE_RO,NOTTESTED
+cuv,langa,neben,,LANG_RO_DE,NOTTESTED
+cuv,die Sonne,soarele,,LANG_DE_RO,NOTOK
+cuv,binden,noi ei a conecta,,LANG_DE_RO,OK
+cuv,darfst,tu a avea voie,,LANG_DE_RO,NOTTESTED
+cuv,das Kind,copilul,,LANG_DE_RO,OK
+cuv,warten,noi ei a astepta,,LANG_DE_RO,NOTTESTED
+cuv,am pus (in picioare),habe gestellt,,LANG_RO_DE,NOTTESTED
+cuv,habe geholfen,am ajutat,,LANG_DE_RO,NOTTESTED
+cuv,stellst,tu a pune,,LANG_DE_RO,NOTOK
+verb,a zice,sagen,sage,sagst,sagt,sagen,sagt,sagen,habe,gesagt,am zis,sage,,LANG_RO_DE,NOTTESTED
+cuv,manchmal,cateodata,,LANG_DE_RO,OK
+cuv,der Tag,ziua,,LANG_DE_RO,OK
+cuv,habe gewartet,am asteptat,,LANG_DE_RO,OK
+subst,estul,der,Osten,,null,,LANG_RO_DE,NOTTESTED
+subst,magazinul,das,Geschäft,Geschäfte,magazinele,,LANG_RO_DE,NOTTESTED
+cuv,a sti tu Imperativ,wißt,,LANG_RO_DE,NOTTESTED
+cuv,a putea tu Imperativ,kann,,LANG_RO_DE,NOTTESTED
+verb,a incepe,beginnen,beginne,beginnst,beginnt,beginnen,beginnt,beginnen,habe,begonnen,am inceput,beginn,,LANG_RO_DE,NOTTESTED
+cuv,die Herbste,toamnele,,LANG_DE_RO,NOTTESTED
+cuv,am completat, ergänzt,,LANG_RO_DE,NOTTESTED
+cuv,verstehen,noi ei a intelege,,LANG_DE_RO,NOTTESTED
+cuv,vergesse,eu a uita,,LANG_DE_RO,OK
+cuv,über,deasupra,,LANG_DE_RO,NOTOK
+cuv,glaubst,tu a crede,,LANG_DE_RO,NOTOK
+verb,a avea nevoie,brauchen,brauche,brauchst,braucht,brauchen,braucht,brauchen,habe,gebraucht,am avut nevoie,brauch,,LANG_RO_DE,NOTTESTED
+cuv,beginnt,el voi a incepe,,LANG_DE_RO,OK
+cuv,die Woche,saptamana,,LANG_DE_RO,NOTTESTED
+cuv,nimmt,el a lua,,LANG_DE_RO,NOTTESTED
+cuv,am gandit,habe  gedacht,,LANG_RO_DE,NOTTESTED
+cuv,bekommt,el voi a primi,,LANG_DE_RO,NOTTESTED
+verb,a face,machen,mache,machst,macht,machen,macht,machen,habe,gemacht,am facut,mach,,LANG_RO_DE,NOTTESTED
+cuv,deasemenea,auch,,LANG_RO_DE,NOTTESTED
+cuv,euer,al vostru,,LANG_DE_RO,NOTTESTED
+cuv,stellt,el voi a pune,,LANG_DE_RO,OK
+cuv,stehst,tu a sta,,LANG_DE_RO,NOTTESTED
+cuv,important,wichtig,,LANG_RO_DE,NOTTESTED
+cuv,auch,deasemenea,,LANG_DE_RO,OK
+subst,ruda,die,Angehörige,Angehörigen,rudele,,LANG_RO_DE,NOTTESTED
+cuv,al meu,mein,forma de baza der,LANG_RO_DE,NOTTESTED
+subst,pantalonul,die,Hose,Hosen,pantalonii,,LANG_RO_DE,NOTTESTED
+cuv,habe gelegt,am pus,,LANG_DE_RO,NOTOK
+cuv,schlecht,rau,,LANG_DE_RO,NOTOK
+cuv,ist,el a fi,,LANG_DE_RO,OK
+subst,tavanul,die,Decke,Decken,tavanurile,,LANG_RO_DE,NOTTESTED
+cuv,melden an,noi ei a inregistra,,LANG_DE_RO,OK
+cuv,die Städte,orasele,,LANG_DE_RO,OK
+cuv,die Decke,tavanul,,LANG_DE_RO,OK
+cuv,am vorbit,habe gesprochen,,LANG_RO_DE,NOTTESTED
+cuv,a gasi tu Imperativ,find,,LANG_RO_DE,NOTTESTED
+verb,a sta,stehen,stehe,stehst,steht,stehen,steht,stehen,habe,gestanden,am stat,stehe,in picioare,LANG_RO_DE,NOTTESTED
+cuv,bekomme,eu a primi,,LANG_DE_RO,NOTTESTED
+cuv,jos,unter,,LANG_RO_DE,NOTTESTED
+cuv,die Spielzeuge,jucariile,,LANG_DE_RO,OK
+cuv,wollt,voi a vrea,,LANG_DE_RO,OK
+cuv,a lua tu Imperativ,nimm,,LANG_RO_DE,NOTTESTED
+cuv,am inteles,habe verstanden,,LANG_RO_DE,NOTTESTED
+cuv,denkst,tu a gandi,,LANG_DE_RO,NOTTESTED
+cuv,wißt,voi a sti,,LANG_DE_RO,NOTTESTED
+cuv,a face (tun) tu Imperativ,tut,,LANG_RO_DE,NOTTESTED
+subst,ora,die,Stunde,Stunden,orele,,LANG_RO_DE,NOTTESTED
+cuv,pentru,für,,LANG_RO_DE,NOTTESTED
+verb,a conecta,binden,binde,bindest,bindet,binden,bindet,binden,habe,gebunden,am conectat,bind,,LANG_RO_DE,NOTTESTED
+cuv,nach,dupa,,LANG_DE_RO,NOTOK
+subst,dintele,der,Zahn,Zähne,dintii,,LANG_RO_DE,NOTTESTED
+cuv,der Anruf,apelul,,LANG_DE_RO,OK
+cuv,habe,eu a avea,,LANG_DE_RO,NOTTESTED
+subst,culoarea,die,Farbe,Farben,culorile,,LANG_RO_DE,NOTTESTED
+cuv,sagen,noi ei a zice,,LANG_DE_RO,OK
+verb,a sti,wissen,weiß,weißt,weiß,wissen,wißt,wissen,habe,gewußt,am stiut,wißt,,LANG_RO_DE,NOTTESTED
+subst,primavara,der,Frühling,Frühlinge,primaverile,,LANG_RO_DE,NOTTESTED
+cuv,die Zähne,dintii,,LANG_DE_RO,NOTTESTED
+cuv,glaube,eu a crede,,LANG_DE_RO,NOTOK
+cuv,die Hosen,pantalonii,,LANG_DE_RO,NOTTESTED
+cuv,leider,din pacate,,LANG_DE_RO,NOTOK
+cuv,das Paar,perechea,,LANG_DE_RO,NOTTESTED
+cuv,helft,voi a ajuta,,LANG_DE_RO,OK
+cuv,die Frühlinge,primaverile,,LANG_DE_RO,NOTTESTED
+subst,formularul,der,Antrag,Anträge,formularele,,LANG_RO_DE,NOTTESTED
+cuv,al nostru,unser,forma de baza der,LANG_RO_DE,NOTTESTED
+cuv,der Name,numele,,LANG_DE_RO,OK
+cuv,wann,cand,,LANG_DE_RO,OK
+cuv,die Winter,iernile,,LANG_DE_RO,OK
+cuv,die Stunde,ora,,LANG_DE_RO,OK
+cuv,die Namen,numele,,LANG_DE_RO,NOTTESTED
+cuv,kennt,el voi a cunoaste,,LANG_DE_RO,OK
+cuv,ergänzen,noi ei a completa,,LANG_DE_RO,OK
+cuv,habe genommen,am luat,,LANG_DE_RO,NOTOK
+cuv,sprechen,noi ei a vorbi,,LANG_DE_RO,NOTTESTED
+cuv,intreg,ganze,,LANG_RO_DE,NOTTESTED
+cuv,sollst,tu ar trebui sa,,LANG_DE_RO,NOTTESTED
+verb,a crede,glauben,glaube,glaubst,glaubt,glauben,glaubt,glauben,habe,geglaubt,am crezut,glaube,,LANG_RO_DE,NOTTESTED
+cuv,cu exceptia,außer,prepozitie,LANG_RO_DE,NOTTESTED
+cuv,ändere,eu a schimba,,LANG_DE_RO,NOTTESTED
+cuv,darf,eu el a avea voie,,LANG_DE_RO,OK
+cuv,al lui,sein,forma de baza der maskulin neutru,LANG_RO_DE,NOTTESTED
+cuv,die Packung,pachetul,,LANG_DE_RO,OK
+cuv,gebe,eu a da,,LANG_DE_RO,OK
+cuv,oder,sau,,LANG_DE_RO,OK
+cuv,wartest,tu a astepta,,LANG_DE_RO,OK
+cuv,a pune (intins) tu Imperativ,lege,,LANG_RO_DE,NOTTESTED
+subst,pantoful,der,Schuh,Schuhe,pantofii,,LANG_RO_DE,NOTTESTED
+subst,ochelarul,die,Brille,Brillen,ochelarii,,LANG_RO_DE,NOTTESTED
+cuv,dann,atunci,,LANG_DE_RO,OK
+cuv,möchte,eu el a dori,,LANG_DE_RO,NOTTESTED
+cuv,a primi tu Imperativ,bekomme,,LANG_RO_DE,NOTTESTED
+cuv,meldet an,el voi a inregistra,,LANG_DE_RO,NOTTESTED
+verb,a face,tun,tue,tust,tut,tun,tut,tun,habe,getan,am facut,tut,tun,LANG_RO_DE,NOTTESTED
+cuv,glaubt,el voi a crede,,LANG_DE_RO,NOTTESTED
+cuv,richtig,adevarat,,LANG_DE_RO,NOTTESTED
+verb,a place,mögen,mag,magst,mag,mögen,mögt,mögen,habe,gemocht,am placut,möge,,LANG_RO_DE,NOTTESTED
+cuv,habe angemeldet,am inregistrat,,LANG_DE_RO,NOTTESTED
+verb,a ajuta,helfen,helfe,hilfst,hilft,helfen,helft,helfen,habe,geholfen,am ajutat,hilf,,LANG_RO_DE,NOTTESTED
+cuv,die Decken,tavanurile,,LANG_DE_RO,OK
+cuv,versteht,el voi a intelege,,LANG_DE_RO,NOTTESTED
+cuv,obosit,müde,,LANG_RO_DE,NOTTESTED
+cuv,die Ketten,lantisoarele,,LANG_DE_RO,NOTOK
+cuv,der Boden,podeaua,,LANG_DE_RO,NOTTESTED
+cuv,sein,al lui,,LANG_DE_RO,NOTOK
+cuv,treffe,eu a intalni,,LANG_DE_RO,OK
+cuv,a aduce tu Imperativ,bring,,LANG_RO_DE,NOTTESTED
+cuv,mache,eu a face,,LANG_DE_RO,OK
+cuv,a intalni tu Imperativ,triff,,LANG_RO_DE,NOTTESTED
+cuv,habt,voi a avea,,LANG_DE_RO,OK
+cuv,wirst,tu a deveni,,LANG_DE_RO,OK
+cuv,binde,eu a conecta,,LANG_DE_RO,OK
+cuv,getrennt,separat,,LANG_DE_RO,NOTOK
+cuv,a completa tu Imperativ,ergänze,,LANG_RO_DE,NOTTESTED
+cuv,am pus (intins),habe gelegt,,LANG_RO_DE,NOTTESTED
+cuv,habe geschlossen,am inchis,,LANG_DE_RO,NOTTESTED
+subst,podeaua,der,Boden,Böden,podelele,,LANG_RO_DE,NOTTESTED
+cuv,opus,gegenüber,peste drum de,LANG_RO_DE,NOTTESTED
+cuv,al vostru,euer,forma de baza der,LANG_RO_DE,NOTTESTED
+cuv,a astepta tu Imperativ,wart,,LANG_RO_DE,NOTTESTED
+cuv,a inchide tu Imperativ,schließ,,LANG_RO_DE,NOTTESTED
+cuv,die Stöcke,etajele,,LANG_DE_RO,OK
+cuv,a intelege tu Imperativ,versteh,,LANG_RO_DE,NOTTESTED
+cuv,a crede tu Imperativ,glaube,,LANG_RO_DE,NOTTESTED
+cuv,a avea tu Imperativ,habe,,LANG_RO_DE,NOTTESTED
+cuv,helfen,noi ei a ajuta,,LANG_DE_RO,NOTTESTED
+cuv,aici,hier,,LANG_RO_DE,NOTTESTED
+cuv,habe getroffen,am intalnit,,LANG_DE_RO,NOTTESTED
+verb,a inchide,schließen,schließe,schließt,schließt,schließen,schließt,schließen,habe,geschlossen,am inchis,schließ,,LANG_RO_DE,NOTTESTED
+cuv,am avut nevoie,habe gebraucht,,LANG_RO_DE,NOTTESTED
+cuv,magst,tu a place,,LANG_DE_RO,NOTTESTED
+cuv,de unde,woher,,LANG_RO_DE,NOTTESTED
+cuv,die Grenze,granita,,LANG_DE_RO,OK
+cuv,bist,tu a fi,,LANG_DE_RO,OK
+cuv,der Schuh,pantoful,,LANG_DE_RO,NOTTESTED
+verb,a alerga,laufen,laufe,läufst,läuft,laufen,laufst,laufen,bin,gelaufen,am alergat,lauf,,LANG_RO_DE,NOTTESTED
+cuv,am putut,habe gekonnt,,LANG_RO_DE,NOTTESTED
+verb,a uita,vergessen,vergesse,vergisst,vergisst,vergessen,vergesst,vergessen,habe,vergessen,am uitat,vergiss,,LANG_RO_DE,NOTTESTED
+verb,a trebui,müssen,muss,musst,muss,müssen,müsst,müssen,habe,gemusst,a trebuit,müss,,LANG_RO_DE,NOTTESTED
+cuv,laufe,eu a alerga,,LANG_DE_RO,NOTTESTED
+cuv,hilft,el a ajuta,,LANG_DE_RO,NOTOK
+cuv,sus,oben,,LANG_RO_DE,NOTTESTED
+cuv,treffen,noi ei a intalni,,LANG_DE_RO,OK
+cuv,die Anrufe,apelurile,,LANG_DE_RO,OK
+cuv,nehme,eu a lua,,LANG_DE_RO,NOTTESTED
+cuv,braucht,el voi a avea nevoie,,LANG_DE_RO,NOTTESTED
+cuv,mein,al meu,,LANG_DE_RO,NOTTESTED
+cuv,die Brillen,ochelarii,,LANG_DE_RO,OK
+cuv,ersetze,eu a inlocui,,LANG_DE_RO,NOTTESTED
+verb,a avea voie,dürfen,darf,darfst,darf,dürfen,dürft,dürfen,habe,gedurft,am avut voie,darf,,LANG_RO_DE,NOTTESTED
+cuv,verstehe,eu a intelege,,LANG_DE_RO,OK
+verb,a pune,stellen,stelle,stellst,stellt,stellen,stellt,stellen,habe,gestellt,am pus,stelle,in picioare,LANG_RO_DE,NOTTESTED
+cuv,dein,al tau,,LANG_DE_RO,OK
+cuv,cu placere,gerne,,LANG_RO_DE,NOTTESTED
+cuv,habe  gewollt,am vrut,,LANG_DE_RO,OK
+cuv,der Westen,vestul,,LANG_DE_RO,OK
+cuv,die Farbe,culoarea,,LANG_DE_RO,NOTTESTED
+cuv,aber,dar,,LANG_DE_RO,NOTTESTED
+cuv,a pune (in picioare) tu Imperativ,stelle,,LANG_RO_DE,NOTTESTED
+cuv,weiß,eu el a sti,,LANG_DE_RO,OK
+cuv,a avea voie tu Imperativ,darf,,LANG_RO_DE,NOTTESTED
+cuv,schließt,tu el voi a inchide,,LANG_DE_RO,OK
+cuv,sind,noi ei a fi,,LANG_DE_RO,NOTTESTED
+cuv,ganze,intreg,,LANG_DE_RO,NOTTESTED
+cuv,acum,jetzt,,LANG_RO_DE,NOTTESTED
+cuv,denken,noi ei a gandi,,LANG_DE_RO,NOTTESTED
+cuv,weiter,inainte,,LANG_DE_RO,NOTTESTED
+subst,nordul,der,Norden,,null,,LANG_RO_DE,NOTTESTED
+subst,timpul,die,Zeit,Zeiten,timpi,,LANG_RO_DE,NOTTESTED
+subst,marea,das,Meer,Meere,marile,,LANG_RO_DE,NOTTESTED
+cuv,nehmen,noi ei a lua,,LANG_DE_RO,OK
+cuv,die Wochen,saptamanile,,LANG_DE_RO,NOTTESTED
+verb,a gasi,finden,finde,findest,findet,finden,findet,finden,habe,gefunden,am gasit,find,,LANG_RO_DE,NOTTESTED
+cuv,a trebuit (shall),habe gesollt,,LANG_RO_DE,NOTTESTED
+cuv,am intalnit,habe getroffen,,LANG_RO_DE,NOTTESTED
+cuv,die Schmerzen,durerile,,LANG_DE_RO,OK
+cuv,dar,aber,,LANG_RO_DE,NOTTESTED
+cuv,die Meere,marile,,LANG_DE_RO,OK
+cuv,der Vorname,prenumele,,LANG_DE_RO,OK
+cuv,poate,vielleicht,,LANG_RO_DE,NOTTESTED
+cuv,die Tage,zilele,,LANG_DE_RO,NOTTESTED
+verb,a aduce,bringen,bringe,bringst,bringt,bringen,bringt,bringen,habe,gebracht,am adus,bring,,LANG_RO_DE,NOTTESTED
+cuv,der Baum,pomul,,LANG_DE_RO,OK
+cuv,a incepe tu Imperativ,beginn,,LANG_RO_DE,NOTTESTED
+cuv,sollen,noi ei ar trebui sa,,LANG_DE_RO,NOTOK
+cuv,am facut (tun),habe getan,,LANG_RO_DE,NOTTESTED
+cuv,der Sommer,vara,,LANG_DE_RO,NOTTESTED
+cuv,etwas,ceva,,LANG_DE_RO,OK
+cuv,die Böden,podelele,,LANG_DE_RO,NOTOK
+cuv,die Kinder,copiii,,LANG_DE_RO,NOTTESTED
+subst,fica,die,Tochter,Töchter,ficele,,LANG_RO_DE,NOTTESTED
+cuv,geben,noi ei a da,,LANG_DE_RO,OK
+cuv,plictisit,langweilig,,LANG_RO_DE,NOTTESTED
+cuv,die Pflanze,planta,,LANG_DE_RO,OK
+cuv,am luat,habe genommen,,LANG_RO_DE,NOTTESTED
+cuv,wenn,daca,,LANG_DE_RO,NOTOK
+cuv,am inlocuit,habe ersetzt,,LANG_RO_DE,NOTTESTED
+cuv,habe gebunden,am conectat,,LANG_DE_RO,OK
+cuv,neben,langa,,LANG_DE_RO,NOTTESTED
+cuv,langsam,incet,,LANG_DE_RO,NOTTESTED
+cuv,gegenüber,opus,,LANG_DE_RO,NOTTESTED
+cuv,das Fahrrad,bicicleta,,LANG_DE_RO,NOTTESTED
+cuv,die Lande,tarile,,LANG_DE_RO,NOTTESTED
+cuv,inainte,weiter,,LANG_RO_DE,NOTTESTED
+cuv,unde,wo,,LANG_RO_DE,NOTTESTED
+subst,jucaria,das,Spielzeug,Spielzeuge,jucariile,,LANG_RO_DE,NOTTESTED
+cuv,ersetzt,tu el voi a inlocui,,LANG_DE_RO,NOTTESTED
+cuv,die Bälle,mingile,,LANG_DE_RO,OK
+cuv,habe gebraucht,am avut nevoie,,LANG_DE_RO,NOTTESTED
+cuv,sehe,eu a vedea,,LANG_DE_RO,OK
+verb,a completa,ergänzen,ergänze,ergänzt,ergänzt,ergänzen,ergänzt,ergänzen,,ergänzt,am completat,ergänze,,LANG_RO_DE,NOTTESTED
+cuv,oben,sus,,LANG_DE_RO,NOTTESTED
+cuv,bin geblieben,am ramas,,LANG_DE_RO,NOTTESTED
+cuv,bin,eu a fi,,LANG_DE_RO,NOTTESTED
+cuv,bin gekommen,am venit,,LANG_DE_RO,OK
+cuv,können,noi ei a putea,,LANG_DE_RO,OK
+cuv,die Angehörige,ruda,,LANG_DE_RO,NOTOK
+cuv,ergänze,eu a completa,,LANG_DE_RO,NOTTESTED
+cuv,finden,noi ei a gasi,,LANG_DE_RO,OK
+subst,fiul,der,Sohn,Söhne,fii,,LANG_RO_DE,NOTTESTED
+cuv,a avea nevoie tu Imperativ,brauch,,LANG_RO_DE,NOTTESTED
+cuv,habe verstanden,am inteles,,LANG_DE_RO,OK
+cuv,trifft,el a intalni,,LANG_DE_RO,NOTTESTED
+cuv,rar,selten,1 2 pe an,LANG_RO_DE,NOTTESTED
+cuv,müsst,voi a trebui,,LANG_DE_RO,OK
+cuv,legt,el voi a pune,,LANG_DE_RO,NOTTESTED
+cuv,ihr,al ei lor,,LANG_DE_RO,NOTTESTED
+cuv,a fi tu Imperativ,sei,,LANG_RO_DE,NOTTESTED
+cuv,der Ball,mingea,,LANG_DE_RO,OK
+cuv,cine,wer,,LANG_RO_DE,NOTTESTED
+cuv,die Sachen,lucrurile,,LANG_DE_RO,NOTOK
+cuv,das Wetter,vremea,,LANG_DE_RO,OK
+cuv,dürfen,noi ei a avea voie,,LANG_DE_RO,OK
+cuv,der Süden,sudul,,LANG_DE_RO,OK
+verb,ar trebui sa,sollen,soll,sollst,soll,sollen,sollt,sollen,habe,gesollt,a trebuit,solle,shall,LANG_RO_DE,NOTTESTED
+cuv,a alerga tu Imperativ,lauf,,LANG_RO_DE,NOTTESTED
+cuv,die Geschäfte,magazinele,,LANG_DE_RO,NOTTESTED
+cuv,weißt,tu a sti,,LANG_DE_RO,NOTOK
+cuv,am ajutat,habe geholfen,,LANG_RO_DE,NOTTESTED
+cuv,frei,liber,,LANG_DE_RO,OK
+cuv,möchtet,voi a dori,,LANG_DE_RO,NOTTESTED
+cuv,schließen,noi ei a inchide,,LANG_DE_RO,NOTOK
+cuv,hat,el a avea,,LANG_DE_RO,OK
+cuv,der Osten,estul,,LANG_DE_RO,OK
+cuv,soll,eu el ar trebui sa,,LANG_DE_RO,OK
+cuv,musst,tu a trebui,,LANG_DE_RO,NOTTESTED
+cuv,trefft,voi a intalni,,LANG_DE_RO,OK
+subst,soarele,die,Sonne,Sonnen,sorii,,LANG_RO_DE,NOTTESTED
+subst,toamna,der,Herbst,Herbste,toamnele,,LANG_RO_DE,NOTTESTED
+cuv,brauche,eu a avea nevoie,,LANG_DE_RO,NOTTESTED
+subst,perechea,das,Paar,Paare,perechile,,LANG_RO_DE,NOTTESTED
+cuv,aproape,fast,,LANG_RO_DE,NOTTESTED
+cuv,am cunoscut,habe gekannt,,LANG_RO_DE,NOTTESTED
+cuv,a veni tu Imperativ,komm,,LANG_RO_DE,NOTTESTED
+cuv,machen,noi ei a face,,LANG_DE_RO,OK
+cuv,die Sekunde,secunda,,LANG_DE_RO,NOTTESTED
+cuv,kann,eu el a putea,,LANG_DE_RO,OK
+cuv,die Bäume,pomii,,LANG_DE_RO,OK
+cuv,am crezut,habe geglaubt,,LANG_RO_DE,NOTTESTED
+cuv,mag,eu el a place,,LANG_DE_RO,OK
+cuv,habe gemocht,am placut,,LANG_DE_RO,OK
+subst,pomul,der,Baum,Bäume,pomii,,LANG_RO_DE,NOTTESTED
+cuv,habe gekonnt,am putut,,LANG_DE_RO,NOTOK
+cuv,a conecta tu Imperativ,bind,,LANG_RO_DE,NOTTESTED
+cuv,habe vergessen,am uitat,,LANG_DE_RO,OK
+cuv,habe gemusst,a trebuit,,LANG_DE_RO,NOTOK
+cuv,die Postleitzahl,codul postal,,LANG_DE_RO,OK
+cuv,helfe,eu a ajuta,,LANG_DE_RO,OK
+cuv,a schimba tu Imperativ,änder,,LANG_RO_DE,NOTTESTED
+cuv,hast,tu a avea,,LANG_DE_RO,OK
+cuv,der Antrag,formularul,,LANG_DE_RO,OK
+cuv,selten,rar,,LANG_DE_RO,NOTTESTED
+cuv,die Schuhe,pantofii,,LANG_DE_RO,OK
+cuv,atunci,dann,,LANG_RO_DE,NOTTESTED
+cuv,kommst,tu a veni,,LANG_DE_RO,OK
+cuv,la,zu,destinatie,LANG_RO_DE,NOTTESTED
+cuv,wo,unde,,LANG_DE_RO,NOTOK
+cuv,dupa,nach,la,LANG_RO_DE,NOTTESTED
+cuv,das Jahr,anul,,LANG_DE_RO,OK
+cuv,sagt,el voi a zice,,LANG_DE_RO,NOTTESTED
+cuv,die Blume,floarea,,LANG_DE_RO,OK
+cuv,beginne,eu a incepe,,LANG_DE_RO,OK
+cuv,müde,obosit,,LANG_DE_RO,OK
+cuv,bringst,tu a aduce,,LANG_DE_RO,NOTTESTED
+subst,piciorul,der,Fuß,Füße,picioarele,,LANG_RO_DE,NOTTESTED
+cuv,laufst,voi a alerga,,LANG_DE_RO,NOTOK
+cuv,könnt,voi a putea,,LANG_DE_RO,OK
+cuv,daca,wenn,,LANG_RO_DE,NOTTESTED
+cuv,a cunoaste tu Imperativ,kenn,,LANG_RO_DE,NOTTESTED
+verb,a inlocui,ersetzen,ersetze,ersetzt,ersetzt,ersetzen,ersetzt,ersetzen,habe,ersetzt,am inlocuit,ersetze,,LANG_RO_DE,NOTTESTED
+cuv,tut,el voi a face,,LANG_DE_RO,NOTOK
+cuv,fast,aproape,,LANG_DE_RO,OK
+cuv,stellen,noi ei a pune,,LANG_DE_RO,OK
+cuv,woher,de unde,,LANG_DE_RO,OK
+cuv,a vrea tu Imperativ,wolle,,LANG_RO_DE,NOTTESTED
+cuv,anderes,altfel,,LANG_DE_RO,NOTOK
+cuv,in spate,hinter,,LANG_RO_DE,NOTTESTED
+cuv,aus,din,,LANG_DE_RO,NOTTESTED
+cuv,schließe,eu a inchide,,LANG_DE_RO,NOTTESTED
+cuv,der Herbst,toamna,,LANG_DE_RO,OK
+cuv,brauchst,tu a avea nevoie,,LANG_DE_RO,NOTTESTED
+cuv,das Wort,cuvantul,,LANG_DE_RO,OK
+cuv,a trebuit,habe gemusst,,LANG_RO_DE,NOTTESTED
+subst,durerea,der,Schmerz,Schmerzen,durerile,,LANG_RO_DE,NOTTESTED
+cuv,die Fahrräder,bicicletele,,LANG_DE_RO,OK
+cuv,denke,eu a gandi,,LANG_DE_RO,NOTOK
+cuv,der Stock,etajul,,LANG_DE_RO,NOTTESTED
+cuv,habe begonnen,am inceput,,LANG_DE_RO,NOTTESTED
+cuv,in fata,vor,,LANG_RO_DE,NOTTESTED
+subst,apelul,der,Anruf,Anrufe,apelurile,convorbire,LANG_RO_DE,NOTTESTED
+verb,a cunoaste,kennen,kenne,kennst,kennt,kennen,kennt,kennen,habe,gekannt,am cunoscut,kenn,,LANG_RO_DE,NOTTESTED
+cuv,die Wörter,cuvintele,,LANG_DE_RO,OK
+verb,a fi,sein,bin,bist,ist,sind,seid,sind,bin,gewesen,am fost,sei,,LANG_RO_DE,NOTTESTED
+cuv,die Sekunden,secundele,,LANG_DE_RO,OK
+cuv,mögen,noi ei a place,,LANG_DE_RO,OK
+cuv,möchtest,tu a dori,,LANG_DE_RO,OK
+cuv,tun,noi ei a face,,LANG_DE_RO,OK
+cuv,von,de la,,LANG_DE_RO,OK
+cuv,nur,doar,,LANG_DE_RO,NOTTESTED
+cuv,am venit,bin gekommen,,LANG_RO_DE,NOTTESTED
+cuv,a place tu Imperativ,möge,,LANG_RO_DE,NOTTESTED
+cuv,habe gestanden,am stat,,LANG_DE_RO,OK
+cuv,vergesst,voi a uita,,LANG_DE_RO,NOTOK
+cuv,spreche,eu a vorbi,,LANG_DE_RO,OK
+verb,a gandi,denken,denke,denkst,denkt,denken,denkt,denken,habe, gedacht,am gandit,denke,,LANG_RO_DE,NOTTESTED
+cuv,de la,von,cu,LANG_RO_DE,NOTTESTED
+cuv,wartet,el voi a astepta,,LANG_DE_RO,OK
+subst,numele,der,Name,Namen,numele,,LANG_RO_DE,NOTTESTED
+cuv,cum,wie,,LANG_RO_DE,NOTTESTED
+cuv,sprecht,voi a vorbi,,LANG_DE_RO,OK
+cuv,jetzt,acum,,LANG_DE_RO,NOTTESTED
+cuv,bei,la,,LANG_DE_RO,OK
+cuv,die Land,tara,,LANG_DE_RO,NOTTESTED
+cuv,kannst,tu a putea,,LANG_DE_RO,NOTTESTED
+cuv,steht,el voi a sta,,LANG_DE_RO,NOTOK
+cuv,der Sohn,fiul,,LANG_DE_RO,NOTTESTED
+cuv,sieht,el a vedea,,LANG_DE_RO,NOTOK
+cuv,din pacate,leider,,LANG_RO_DE,NOTTESTED
+cuv,habe gefunden,am gasit,,LANG_DE_RO,OK
+cuv,weil,deoarece,,LANG_DE_RO,OK
+cuv,läuft,el a alerga,,LANG_DE_RO,OK
+cuv,muss,eu el a trebui,,LANG_DE_RO,OK
+cuv,die Blumen,florile,,LANG_DE_RO,OK
+cuv,am inregistrat,habe angemeldet,,LANG_RO_DE,NOTTESTED
+cuv,das Spielzeug,jucaria,,LANG_DE_RO,OK
+cuv,a da tu Imperativ,gib,,LANG_RO_DE,NOTTESTED
+cuv,erlaubt,permis,,LANG_DE_RO,NOTTESTED
+cuv,destul,genug,,LANG_RO_DE,NOTTESTED
+cuv,bringen,noi ei a aduce,,LANG_DE_RO,OK
+subst,saptamana,die,Woche,Wochen,saptamanile,,LANG_RO_DE,NOTTESTED
+cuv,a gandi tu Imperativ,denke,,LANG_RO_DE,NOTTESTED
+cuv,habe gesagt,am zis,,LANG_DE_RO,NOTTESTED
+cuv,änderst,tu a schimba,,LANG_DE_RO,NOTOK
+verb,a inregistra,anmelden,melde an,meldest an,meldet an,melden an,meldet an,melden an,habe,angemeldet,am inregistrat,melde an,,LANG_RO_DE,NOTTESTED
+cuv,werdet,voi a deveni,,LANG_DE_RO,NOTTESTED
+cuv,der Frühling,primavara,,LANG_DE_RO,NOTTESTED
+cuv,machst,tu a face,,LANG_DE_RO,OK
+cuv,am inceput,habe begonnen,,LANG_RO_DE,NOTTESTED
+cuv,habe gebracht,am adus,,LANG_DE_RO,NOTOK
+verb,a primi,bekommen,bekomme,bekommst,bekommt,bekommen,bekommt,bekommen,habe,bekommen,am primit,bekomme,,LANG_RO_DE,NOTTESTED
+cuv,die Füße,picioarele,,LANG_DE_RO,OK
+cuv,nehmt,voi a lua,,LANG_DE_RO,NOTOK
+subst,anul,das,Jahr,Jahre,anii,,LANG_RO_DE,NOTTESTED
+subst,numarul,die,Nummer,Nummern,numerele,,LANG_RO_DE,NOTTESTED
+cuv,die Sache,lucrul,,LANG_DE_RO,NOTOK
+verb,a veni,kommen,komme,kommst,kommt,kommen,kommt,kommen,bin,gekommen,am venit,komm,,LANG_RO_DE,NOTTESTED
+cuv,am placut,habe gemocht,,LANG_RO_DE,NOTTESTED
+cuv,doar,nur,,LANG_RO_DE,NOTTESTED
+cuv,al tau,dein,forma de baza der,LANG_RO_DE,NOTTESTED
+cuv,hier,aici,,LANG_DE_RO,OK
+subst,floarea,die,Blume,Blumen,florile,,LANG_RO_DE,NOTTESTED
+cuv,die Nummer,numarul,,LANG_DE_RO,NOTTESTED
+cuv,stelle,eu a pune,,LANG_DE_RO,NOTOK
+cuv,die Monate,lunile,,LANG_DE_RO,NOTTESTED
+cuv,sehen,noi ei a vedea,,LANG_DE_RO,OK
+cuv,am primit,habe bekommen,,LANG_RO_DE,NOTTESTED
+cuv,a uita tu Imperativ,vergiss,,LANG_RO_DE,NOTTESTED
+cuv,am devenit,bin geworden,,LANG_RO_DE,NOTTESTED
+cuv,habe gedurft,am avut voie,,LANG_DE_RO,NOTTESTED
+cuv,ersetzen,noi ei a inlocui,,LANG_DE_RO,NOTTESTED
+cuv,immer,totdeauna,,LANG_DE_RO,OK
+cuv,ändern,noi ei a schimba,,LANG_DE_RO,OK
+cuv,am asteptat,habe gewartet,,LANG_RO_DE,NOTTESTED
+cuv,cu,mit,,LANG_RO_DE,NOTTESTED
+cuv,die Postleitzahlen,codurile postale,,LANG_DE_RO,NOTTESTED
+cuv,a deveni tu Imperativ,werd,,LANG_RO_DE,NOTTESTED
+cuv,habe  gedacht,am gandit,,LANG_DE_RO,NOTTESTED
+cuv,die Paare,perechile,,LANG_DE_RO,NOTOK
+cuv,hässlich,urat,,LANG_DE_RO,OK
+cuv,hilfst,tu a ajuta,,LANG_DE_RO,OK
+cuv,dedesupt,unter,,LANG_RO_DE,NOTTESTED
+cuv,am inchis,habe geschlossen,,LANG_RO_DE,NOTTESTED
+subst,vremea,das,Wetter,,null,,LANG_RO_DE,NOTTESTED
+cuv,zwischen,intre,,LANG_DE_RO,OK
+cuv,die Sonnen,sorii,,LANG_DE_RO,NOTTESTED
+subst,vestul,der,Westen,,null,,LANG_RO_DE,NOTTESTED
+subst,bicicleta,das,Fahrrad,Fahrräder,bicicletele,,LANG_RO_DE,NOTTESTED
+cuv,bindest,tu a conecta,,LANG_DE_RO,OK
+cuv,die Momente,momentele,,LANG_DE_RO,OK
+cuv,verstehst,tu a intelege,,LANG_DE_RO,OK
+cuv,die Söhne,fii,,LANG_DE_RO,OK
+cuv,a vedea tu Imperativ,sieh,,LANG_RO_DE,NOTTESTED
+cuv,zusammen,impreuna,,LANG_DE_RO,OK
+cuv,habe getan,am facut,,LANG_DE_RO,OK
+cuv,cateodata,manchmal,,LANG_RO_DE,NOTTESTED
+cuv,gerne,cu placere,,LANG_DE_RO,OK
+cuv,der Schmerz,durerea,,LANG_DE_RO,NOTTESTED
+subst,codul postal,die,Postleitzahl,Postleitzahlen,codurile postale,,LANG_RO_DE,NOTTESTED
+cuv,laufen,noi ei a alerga,,LANG_DE_RO,OK
+cuv,der Fuß,piciorul,,LANG_DE_RO,NOTTESTED
+cuv,die Zeit,timpul,,LANG_DE_RO,OK
+cuv,gibst,tu a da,,LANG_DE_RO,OK
+cuv,pe,auf,,LANG_RO_DE,NOTTESTED
+cuv,legene,ei a pune,,LANG_DE_RO,NOTTESTED
+cuv,macht,el voi a face,,LANG_DE_RO,NOTOK
+cuv,intre,zwischen,,LANG_RO_DE,NOTTESTED
+cuv,a inlocui tu Imperativ,ersetze,,LANG_RO_DE,NOTTESTED
+verb,a intelege,verstehen,verstehe,verstehst,versteht,verstehen,versteht,verstehen,habe,verstanden,am inteles,versteh,,LANG_RO_DE,NOTTESTED
+cuv,vergisst,tu el a uita,,LANG_DE_RO,OK
+cuv,stehen,noi ei a sta,,LANG_DE_RO,NOTTESTED
+cuv,melde an,eu a inregistra,,LANG_DE_RO,OK
+cuv,habe gemacht,am facut,,LANG_DE_RO,OK
+cuv,habe gesehen,am vazut,,LANG_DE_RO,OK
+cuv,am avut voie,habe gedurft,,LANG_RO_DE,NOTTESTED
+cuv,mit,cu,,LANG_DE_RO,OK
+subst,ziua,der,Tag,Tage,zilele,,LANG_RO_DE,NOTTESTED
+cuv,höflich,politicos,,LANG_DE_RO,NOTOK
+cuv,die Angehörigen,rudele,,LANG_DE_RO,NOTTESTED
+cuv,seit,de cand,,LANG_DE_RO,OK
+subst,lantisorul,die,Kette,Ketten,lantisoarele,,LANG_RO_DE,NOTTESTED
+verb,a schimba,ändern,ändere,änderst,ändert,ändern,ändert,ändern,habe,geändert,am schimbat,änder,,LANG_RO_DE,NOTTESTED
+cuv,seid,voi a fi,,LANG_DE_RO,NOTTESTED
+cuv,ein bisschen,putin,,LANG_DE_RO,NOTTESTED
+subst,secunda,die,Sekunde,Sekunden,secundele,,LANG_RO_DE,NOTTESTED
+cuv,am dat,habe gegeben,,LANG_RO_DE,NOTTESTED
+cuv,sagst,tu a zice,,LANG_DE_RO,OK
+cuv,warte,eu a astepta,,LANG_DE_RO,OK
+cuv,rau,schlecht,,LANG_RO_DE,NOTTESTED
+cuv,la,bei,langa,LANG_RO_DE,NOTTESTED
+cuv,adevarat,richtig,,LANG_RO_DE,NOTTESTED
+cuv,incet,langsam,,LANG_RO_DE,NOTTESTED
+verb,a dori,möchten,möchte,möchtest,möchte,möchten,möchtet,möchten,null,null,,,,LANG_RO_DE,NOTTESTED
+cuv,sprichst,tu a vorbi,,LANG_DE_RO,OK
+cuv,putin,ein bisschen,,LANG_RO_DE,NOTTESTED
+cuv,wird,el a deveni,,LANG_DE_RO,OK
+cuv,die Töchter,ficele,,LANG_DE_RO,OK
+subst,prenumele,der,Vorname,Vornamen,prenumele,,LANG_RO_DE,NOTTESTED
+cuv,kenne,eu a cunoaste,,LANG_DE_RO,OK
+subst,orasul,die,Stadt,Städte,orasele,,LANG_RO_DE,NOTTESTED
+cuv,genug,destul,,LANG_DE_RO,OK
+cuv,gibt,el a da,,LANG_DE_RO,OK
+cuv,stehe,eu a sta,,LANG_DE_RO,NOTTESTED
+cuv,hinter,in spate,,LANG_DE_RO,OK
+cuv,ändert,el voi a schimba,,LANG_DE_RO,OK
+cuv,a sta (a sta(a ramane)) tu Imperativ,bleib,,LANG_RO_DE,NOTTESTED
+verb,a pune,legen,lege,legst,legt,legen,legt,legene,habe,gelegt,am pus,lege,intins,LANG_RO_DE,NOTTESTED
+cuv,wissen,noi ei a sti,,LANG_DE_RO,OK
+cuv,sage,eu a zice,,LANG_DE_RO,NOTTESTED
+cuv,breit,lat,,LANG_DE_RO,NOTTESTED
+cuv,vielleicht,poate,,LANG_DE_RO,OK
+cuv,die Stunden,orele,,LANG_DE_RO,OK
+cuv,findet,el voi a gasi,,LANG_DE_RO,NOTTESTED
+cuv,vechi,alt,,LANG_RO_DE,NOTTESTED
+cuv,habe gegeben,am dat,,LANG_DE_RO,NOTOK
+verb,a vorbi,sprechen,spreche,sprichst,spricht,sprechen,sprecht,sprechen,habe,gesprochen,am vorbit,sprich,,LANG_RO_DE,NOTTESTED
+cuv,bin gelaufen,am alergat,,LANG_DE_RO,OK
+cuv,ohne,fara,,LANG_DE_RO,OK
+cuv,lustig,amuzant,,LANG_DE_RO,NOTTESTED
+cuv,deasupra,über,,LANG_RO_DE,NOTTESTED
+cuv,des,oft,,LANG_RO_DE,NOTTESTED
+cuv,cand,wann,,LANG_RO_DE,NOTTESTED
+cuv,die Stadt,orasul,,LANG_DE_RO,OK
+cuv,die Zeiten,timpi,,LANG_DE_RO,NOTOK
+cuv,al ei lor,ihr,forma de baza der,LANG_RO_DE,NOTTESTED
+cuv,meldest an,tu a inregistra,,LANG_DE_RO,OK
+cuv,kommen,noi ei a veni,,LANG_DE_RO,OK
+cuv,mögt,voi a place,,LANG_DE_RO,OK
+cuv,deoarece,weil,,LANG_RO_DE,NOTTESTED
+cuv,triffst,tu a intalni,,LANG_DE_RO,OK
+cuv,politicos,höflich,,LANG_RO_DE,NOTTESTED
+cuv,müssen,noi ei a trebui,,LANG_DE_RO,NOTTESTED
+cuv,ar trebui sa (shall) tu Imperativ,solle,,LANG_RO_DE,NOTTESTED
+subst,mana,die,Hand,Hände,mainile,,LANG_RO_DE,NOTTESTED
+cuv,denkt,el voi a gandi,,LANG_DE_RO,NOTTESTED
+cuv,nimmst,tu a lua,,LANG_DE_RO,NOTTESTED
+cuv,haben,noi ei a avea,,LANG_DE_RO,OK
+cuv,wer,cine,,LANG_DE_RO,OK
+cuv,schmal,ingust,,LANG_DE_RO,NOTOK
+cuv,siehst,tu a vedea,,LANG_DE_RO,OK
+cuv,werden,noi ei a deveni,,LANG_DE_RO,OK
+cuv,möchten,noi ei a dori,,LANG_DE_RO,NOTOK
+subst,etajul,der,Stock,Stöcke,etajele,,LANG_RO_DE,NOTTESTED
+cuv,die Minuten,minutele,,LANG_DE_RO,NOTTESTED
+cuv,legst,tu a pune,,LANG_DE_RO,NOTTESTED
+cuv,das Ohr,urechea,,LANG_DE_RO,NOTTESTED
+cuv,a face tu Imperativ,mach,,LANG_RO_DE,NOTTESTED
+cuv,totdeauna,immer,,LANG_RO_DE,NOTTESTED
+cuv,die Jahre,anii,,LANG_DE_RO,OK
+subst,luna,der,Monat,Monate,lunile,perioada de timp,LANG_RO_DE,NOTTESTED
+cuv,brauchen,noi ei a avea nevoie,,LANG_DE_RO,NOTTESTED
+cuv,habe gestellt,am pus,,LANG_DE_RO,NOTTESTED
+cuv,tue,eu a face,,LANG_DE_RO,OK
+cuv,ingust,schmal,,LANG_RO_DE,NOTTESTED
+cuv,am uitat,habe vergessen,,LANG_RO_DE,NOTTESTED
+cuv,a vorbi tu Imperativ,sprich,,LANG_RO_DE,NOTTESTED
+cuv,die Anträge,formularele,,LANG_DE_RO,OK
+cuv,am zis,habe gesagt,,LANG_RO_DE,NOTTESTED
+cuv,altfel,anderes,,LANG_RO_DE,NOTTESTED
+cuv,der Winter,iarna,,LANG_DE_RO,OK
+cuv,habe gekannt,am cunoscut,,LANG_DE_RO,NOTOK
+cuv,bleibt,el voi a sta,,LANG_DE_RO,NOTTESTED
+subst,granita,die,Grenze,Grenzen,granitele,,LANG_RO_DE,NOTTESTED
+cuv,am fost,bin gewesen,,LANG_RO_DE,NOTTESTED
+subst,sudul,der,Süden,,null,,LANG_RO_DE,NOTTESTED
+verb,a astepta,warten,warte,wartest,wartet,warten,wartet,warten,habe,gewartet,am asteptat,wart,,LANG_RO_DE,NOTTESTED
+cuv,habe gehabt,am avut,,LANG_DE_RO,OK
+cuv,tust,tu a face,,LANG_DE_RO,NOTOK
+cuv,ergänzt,tu el voi a completa,,LANG_DE_RO,NOTOK
+cuv,spricht,el a vorbi,,LANG_DE_RO,OK
+cuv,die Hose,pantalonul,,LANG_DE_RO,NOTTESTED
+subst,tara,die,Land,Lande,tarile,,LANG_RO_DE,NOTTESTED
+cuv,das Geschäft,magazinul,,LANG_DE_RO,NOTTESTED
+cuv,seht,voi a vedea,,LANG_DE_RO,OK
+cuv,bindet,el voi a conecta,,LANG_DE_RO,NOTTESTED
+cuv,läufst,tu a alerga,,LANG_DE_RO,NOTTESTED
+cuv,cel putin,mindestens,,LANG_RO_DE,NOTTESTED
+cuv,liber,frei,,LANG_RO_DE,NOTTESTED
+cuv,dürft,voi a avea voie,,LANG_DE_RO,OK
+subst,cuvantul,das,Wort,Wörter,cuvintele,,LANG_RO_DE,NOTTESTED
+verb,a putea,können,kann,kannst,kann,können,könnt,können,habe,gekonnt,am putut,kann,,LANG_RO_DE,NOTTESTED
+subst,pachetul,die,Packung,Packungen,pachetele,,LANG_RO_DE,NOTTESTED
+cuv,am facut,habe gemacht,,LANG_RO_DE,NOTTESTED
+cuv,alt,vechi,,LANG_DE_RO,OK
+cuv,willst,tu a vrea,,LANG_DE_RO,OK
+cuv,amuzant,lustig,,LANG_RO_DE,NOTTESTED
+cuv,am gasit,habe gefunden,,LANG_RO_DE,NOTTESTED
+cuv,kommt,el voi a veni,,LANG_DE_RO,OK
+subst,vara,der,Sommer,Sommer,verile,,LANG_RO_DE,NOTTESTED
+cuv,habe gesollt,a trebuit,,LANG_DE_RO,NOTOK
+cuv,lege,eu a pune,,LANG_DE_RO,NOTOK
+cuv,habe geglaubt,am crezut,,LANG_DE_RO,NOTTESTED
+cuv,urat,hässlich,,LANG_RO_DE,NOTTESTED
+cuv,außer,cu exceptia,,LANG_DE_RO,NOTOK
+cuv,die Nummern,numerele,,LANG_DE_RO,OK
+cuv,a sta (in picioare) tu Imperativ,stehe,,LANG_RO_DE,NOTTESTED
+cuv,a inregistra tu Imperativ,melde an,,LANG_RO_DE,NOTTESTED
+cuv,die Farben,culorile,,LANG_DE_RO,NOTTESTED
+cuv,der Norden,nordul,,LANG_DE_RO,NOTTESTED
+cuv,bleiben,noi ei a sta,,LANG_DE_RO,OK
+cuv,permis,erlaubt,,LANG_RO_DE,NOTTESTED
+cuv,bringt,el voi a aduce,,LANG_DE_RO,NOTTESTED
+cuv,das Moment,momentul,,LANG_DE_RO,OK
+cuv,sollt,voi ar trebui sa,,LANG_DE_RO,NOTTESTED
+cuv,die Hand,mana,,LANG_DE_RO,OK
+cuv,finde,eu a gasi,,LANG_DE_RO,OK
+cuv,die Vornamen,prenumele,,LANG_DE_RO,OK
+cuv,beginnst,tu a incepe,,LANG_DE_RO,OK
+cuv,bleibst,tu a sta,,LANG_DE_RO,NOTOK
+cuv,habe geändert,am schimbat,,LANG_DE_RO,NOTTESTED
+verb,a intalni,treffen,treffe,triffst,trifft,treffen,trefft,treffen,habe,getroffen,am intalnit,triff,,LANG_RO_DE,NOTTESTED
+cuv,habe gesprochen,am vorbit,,LANG_DE_RO,OK
+cuv,bin gewesen,am fost,,LANG_DE_RO,NOTTESTED
+cuv,legen,noi a pune,,LANG_DE_RO,NOTTESTED
+cuv,unser,al nostru,,LANG_DE_RO,NOTTESTED
+cuv,am adus,habe gebracht,,LANG_RO_DE,NOTTESTED
