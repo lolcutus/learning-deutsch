@@ -127,17 +127,19 @@ public class TestDialogs {
                         break;
                     } else if (sbD.exit() == Exit.RESET) {
                         ls.reset();
+                        translation = ls.getNext();
                     } else if (sbD.exit() == Exit.SAVE) {
                         ls.save();
                     } else {
                         ls.processresponse(sbD.isFirstCorrectAnswer());
+                        translation = ls.getNext();
                     }
                 }
                 try {
                     Thread.sleep(this.getSleepTime() * 1000);
                 } catch (InterruptedException ex) {
                 }
-                translation = ls.getNext();
+
             }
 
             if (runThis) {
