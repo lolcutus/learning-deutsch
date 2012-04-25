@@ -1,28 +1,23 @@
 package ro.cuzma.tools.germana.ui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.FocusTraversalPolicy;
 import java.awt.GridLayout;
-import java.awt.HeadlessException;
 import java.awt.Label;
 import java.awt.event.KeyEvent;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ro.cuzma.tools.germana.translation.Translation;
 import ro.cuzma.tools.germana.translation.Verb;
 
-public class VerbDialogNew extends TranslationDialog {
+public class VerbPanel extends TranslationPanel {
     /**
      * 
      */
     private static final long serialVersionUID = 4414436308024591000L;
-    private Verb verb;
     private JTextField ichTF;
     private JTextField doTF;
     private JTextField erTF;
@@ -30,16 +25,39 @@ public class VerbDialogNew extends TranslationDialog {
     private JTextField ihrTF;
     private JTextField sieTF;
 
-    public VerbDialogNew(Translation tr) throws HeadlessException {
-        super(tr);
-        // System.out.println(substantiv.getPlural());
+    private static VerbPanel onlyOne = null;
+
+    public static VerbPanel getPanel(Verb tr, RunMe application) {
+        if (onlyOne == null) {
+            onlyOne = new VerbPanel(tr, application);
+        } else {
+            onlyOne.setTranslation(tr);
+        }
+        return onlyOne;
     }
 
-    protected void setMainPanel() {
-        this.setBounds(startPoint.x, startPoint.y, 600, 165);
-        verb = (Verb) tr;
-        jMainPanel.setLayout(new BorderLayout());
+    @Override
+    public void reset() {
+        ichTF.setBackground(COLOR_NEW);
+        ichTF.setText("");
+        doTF.setBackground(COLOR_NEW);
+        doTF.setText("");
+        erTF.setBackground(COLOR_NEW);
+        erTF.setText("");
+        wirTF.setBackground(COLOR_NEW);
+        wirTF.setText("");
+        ihrTF.setBackground(COLOR_NEW);
+        ihrTF.setText("");
+        sieTF.setBackground(COLOR_NEW);
+        sieTF.setText("");
 
+    }
+
+    public VerbPanel(Verb tr, RunMe application) {
+        super(tr, application);
+    }
+
+    protected JPanel setMainPanel() {
         JPanel panelMain = new JPanel();
         panelMain.setLayout(new GridLayout(3, 4));
         ichTF = new JTextField();
@@ -51,10 +69,8 @@ public class VerbDialogNew extends TranslationDialog {
         sieTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    if (setTestAction()) {
-                        close();
-                    } else {
-                        firstCorrectAnswer = false;
+                    if (isCorrectAnswer()) {
+                        application.setAndNext(isFirstCorrectAnswer());
                     }
                 }
             }
@@ -73,40 +89,29 @@ public class VerbDialogNew extends TranslationDialog {
         panelMain.add(new Label("Sie"));
         panelMain.add(sieTF);
 
-        /*
-         * JPanel panelWest = new JPanel(); panelWest.setLayout(new GridLayout(1, 1));
-         * panelWest.add(new JLabel("Traducere")); jMainPanel.add(panelWest, BorderLayout.WEST);
-         */
-
-        JPanel panelNorth = new JPanel();
-        panelNorth.setLayout(new GridLayout(1, 1));
-        panelNorth.add(new JLabel(verb.getSource() + " " + verb.getDescription()));
-        jMainPanel.add(panelNorth, BorderLayout.NORTH);
-
-        jMainPanel.add(panelSouth, BorderLayout.SOUTH);
-        jMainPanel.add(panelMain, BorderLayout.CENTER);
         this.setFocusTraversalPolicy(new MyOwnFocusTraversalPolicy());
-
+        return panelMain;
     }
 
-    protected void setSolutionAction() {
-        ichTF.setBackground(new Color(255, 255, 255));
+    protected void internal_setSolution() {
+        Verb verb = (Verb) tr;
+        ichTF.setBackground(COLOR_NEW);
         ichTF.setText(verb.getIch());
-        doTF.setBackground(new Color(255, 255, 255));
+        doTF.setBackground(COLOR_NEW);
         doTF.setText(verb.getDo_());
-        erTF.setBackground(new Color(255, 255, 255));
+        erTF.setBackground(COLOR_NEW);
         erTF.setText(verb.getEr());
-        wirTF.setBackground(new Color(255, 255, 255));
+        wirTF.setBackground(COLOR_NEW);
         wirTF.setText(verb.getWir());
-        ihrTF.setBackground(new Color(255, 255, 255));
+        ihrTF.setBackground(COLOR_NEW);
         ihrTF.setText(verb.getIhr());
-        sieTF.setBackground(new Color(255, 255, 255));
+        sieTF.setBackground(COLOR_NEW);
         sieTF.setText(verb.getSie());
-
     }
 
     protected boolean setTestAction() {
         boolean result = false;
+        Verb verb = (Verb) tr;
         int contor = 0;
         if (ichTF.getText().equals(verb.getIch()) || verb.getIch().equals("-")) {
             ichTF.setBackground(new Color(0, 255, 0));
@@ -218,6 +223,13 @@ public class VerbDialogNew extends TranslationDialog {
         public Component getFirstComponent(Container focusCycleRoot) {
             return ichTF;
         }
+    }
+
+    @Override
+    protected String getTitle() {
+        Verb verb = (Verb) tr;
+        return verb.getSource() + " " + verb.getDescription();
+
     }
 
 }

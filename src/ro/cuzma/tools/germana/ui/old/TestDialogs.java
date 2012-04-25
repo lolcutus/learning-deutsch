@@ -1,4 +1,4 @@
-package ro.cuzma.tools.germana.ui;
+package ro.cuzma.tools.germana.ui.old;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,7 +12,7 @@ import ro.cuzma.tools.germana.translation.Substantiv;
 import ro.cuzma.tools.germana.translation.Translation;
 import ro.cuzma.tools.germana.translation.Translation.Language;
 import ro.cuzma.tools.germana.translation.Verb;
-import ro.cuzma.tools.germana.ui.TranslationDialog.Exit;
+import ro.cuzma.tools.germana.ui.old.TranslationDialog.Exit;
 
 public class TestDialogs {
 

@@ -34,7 +34,11 @@ public class Verb extends Translation {
 
     public String getPastParticiple() {
         if (pastParticiple != null && !pastParticiple.equals("")) {
-            return auxiliar + " " + pastParticiple;
+            if (auxiliar != null && !auxiliar.equals("")) {
+                return auxiliar + " " + pastParticiple;
+            } else {
+                return pastParticiple;
+            }
         } else {
             return "";
         }

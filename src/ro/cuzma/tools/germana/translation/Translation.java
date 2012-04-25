@@ -3,7 +3,18 @@ package ro.cuzma.tools.germana.translation;
 public abstract class Translation {
 
     public enum Language {
-        LANG_ALL, LANG_RO_DE, LANG_DE_RO
+        LANG_ALL("all translations"), LANG_RO_DE("Ro -> De translations"), LANG_DE_RO(
+                "De -> Ro translations");
+        private String description;
+
+        private Language(String description) {
+            this.description = description;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
     }
 
     public enum Tested {
