@@ -35,7 +35,8 @@ public class LearningList {
     }
 
     private Translation currentTranslation;
-    private final Language language;
+    private Language language;
+
     private final String separator;
     private final String fileName;
 
@@ -84,23 +85,25 @@ public class LearningList {
     }
 
     public void saveAs(String fileName) {
-        File tmp = new File(fileName + ".old");
-        tmp.delete();
-        File curentFile = new File(fileName);
-        curentFile.renameTo(tmp);
-        try {
-            curentFile.createNewFile();
-            RandomAccessFile ra = new RandomAccessFile(curentFile, "rw");
-            StringBuilder s = new StringBuilder();
-            for (Translation trans : initialList) {
-                s = trans.getCsvString(s, separator);
-            }
-            ra.write(s.toString().getBytes(Charset.forName("utf-8")));
-            ra.close();
+        if (initialList.length > 0) {
+            File tmp = new File(fileName + ".old");
+            tmp.delete();
+            File curentFile = new File(fileName);
+            curentFile.renameTo(tmp);
+            try {
+                curentFile.createNewFile();
+                RandomAccessFile ra = new RandomAccessFile(curentFile, "rw");
+                StringBuilder s = new StringBuilder();
+                for (Translation trans : initialList) {
+                    s = trans.getCsvString(s, separator);
+                }
+                ra.write(s.toString().getBytes(Charset.forName("utf-8")));
+                ra.close();
 
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
 
     }
@@ -112,46 +115,48 @@ public class LearningList {
 
     private Translation[] load(String fileName) {
         List<Translation> translations = new ArrayList<Translation>();
-        try {
-            RandomAccessFile cuvinte = new RandomAccessFile(fileName, "rw");
-
-            UTFRandomFileLineReader reader = new UTFRandomFileLineReader(cuvinte);
+        if (fileName != null) {
             try {
-                String line = reader.readLine();
-                String tip = "";
-                while (line != null) {
-                    MyStringTokenizer mySt = new MyStringTokenizer(line, separator);
-                    try {
-                        // int cnt = (new Integer(st.nextToken())).intValue();
-                        // if (cnt > 0) {
-                        List<Translation> tran = null;
-                        tip = mySt.nextToken();
-                        if (tip.equals("subst")) {
-                            tran = Substantiv.build(1, mySt);
-                        }
-                        if (tip.equals("cuv")) {
-                            tran = Cuvant.build(1, mySt);
-                        }
-                        if (tip.equals("verb")) {
-                            tran = Verb.build(1, mySt);
+                RandomAccessFile cuvinte = new RandomAccessFile(fileName, "rw");
 
-                        }
-                        if (tran != null) {
-                            for (Translation translation : tran) {
-                                translations.add(translation);
+                UTFRandomFileLineReader reader = new UTFRandomFileLineReader(cuvinte);
+                try {
+                    String line = reader.readLine();
+                    String tip = "";
+                    while (line != null) {
+                        MyStringTokenizer mySt = new MyStringTokenizer(line, separator);
+                        try {
+                            // int cnt = (new Integer(st.nextToken())).intValue();
+                            // if (cnt > 0) {
+                            List<Translation> tran = null;
+                            tip = mySt.nextToken();
+                            if (tip.equals("subst")) {
+                                tran = Substantiv.build(1, mySt);
                             }
+                            if (tip.equals("cuv")) {
+                                tran = Cuvant.build(1, mySt);
+                            }
+                            if (tip.equals("verb")) {
+                                tran = Verb.build(1, mySt);
+
+                            }
+                            if (tran != null) {
+                                for (Translation translation : tran) {
+                                    translations.add(translation);
+                                }
+                            }
+                            // }
+                        } catch (Exception ex2) {
+                            System.out.println("=============" + line + "-" + ex2.getMessage());
                         }
-                        // }
-                    } catch (Exception ex2) {
-                        System.out.println("=============" + line + "-" + ex2.getMessage());
+                        line = reader.readLine();
                     }
-                    line = reader.readLine();
+                    cuvinte.close();
+                } catch (IOException ex1) {
                 }
-                cuvinte.close();
-            } catch (IOException ex1) {
+            } catch (FileNotFoundException ex) {
+                System.out.println(fileName + " not found!!!");
             }
-        } catch (FileNotFoundException ex) {
-            System.out.println(fileName + " not found!!!");
         }
         Collections.shuffle(translations);
         return translations.toArray(new Translation[translations.size()]);
@@ -179,4 +184,12 @@ public class LearningList {
         return true;
     }
 
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+        setCurrentList();
+    }
 }

@@ -1,4 +1,4 @@
-package ro.cuzma.tools.germana.ui;
+package ro.cuzma.tools.germana.ui.old;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
