@@ -428,7 +428,6 @@ public class RunMe {
         int returnVal = chooser.showOpenDialog(mainFrame);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             thFile = chooser.getSelectedFile();
-            // System.out.println("aaa");
             dbFile = thFile.getAbsolutePath();
             learningList = new LearningList(dbFile, currentLanguage, separator);
         }
