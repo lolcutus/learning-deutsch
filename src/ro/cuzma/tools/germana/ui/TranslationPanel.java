@@ -2,9 +2,9 @@ package ro.cuzma.tools.germana.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -19,9 +19,6 @@ public abstract class TranslationPanel extends JPanel {
     private static final long serialVersionUID = 1L;
     Translation tr;
 
-    JButton btSolution = new JButton("Solution");
-    JButton btNext = new JButton("Next");
-    JButton btTest = new JButton("Test");
     JPanel panelSouth = new JPanel();
 
     protected final RunMe application;
@@ -84,5 +81,13 @@ public abstract class TranslationPanel extends JPanel {
         firstCorrectAnswer = false;
         internal_setSolution();
     }
+
+    public abstract Component getNextFocus(Component component);
+
+    public abstract Component getFirstFocusComponent();
+
+    public abstract Component getBeforeFocus(Component component);
+
+    public abstract Component getLastFocusComponent();
 
 }

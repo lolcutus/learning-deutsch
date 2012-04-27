@@ -88,8 +88,6 @@ public class VerbPanel extends TranslationPanel {
         panelMain.add(erTF);
         panelMain.add(new Label("Sie"));
         panelMain.add(sieTF);
-
-        this.setFocusTraversalPolicy(new MyOwnFocusTraversalPolicy());
         return panelMain;
     }
 
@@ -178,20 +176,21 @@ public class VerbPanel extends TranslationPanel {
             } else if (aComponent.equals(ihrTF)) {
                 return sieTF;
             } else if (aComponent.equals(sieTF)) {
-                return btTest;
-            } else if (aComponent.equals(btTest)) {
-                return btSolution;
-            } else if (aComponent.equals(btSolution)) {
-                return btNext;
-            } else if (aComponent.equals(btNext)) {
                 return ichTF;
             }
+            // } else if (aComponent.equals(btTest)) {
+            // return btSolution;
+            // } else if (aComponent.equals(btSolution)) {
+            // return btNext;
+            // } else if (aComponent.equals(btNext)) {
+            // return ichTF;
+            // }
             return ichTF;
         }
 
         public Component getComponentBefore(Container focusCycleRoot, Component aComponent) {
             if (aComponent.equals(ichTF)) {
-                return btNext;
+                return sieTF;
             } else if (aComponent.equals(doTF)) {
                 return ichTF;
             } else if (aComponent.equals(erTF)) {
@@ -202,13 +201,14 @@ public class VerbPanel extends TranslationPanel {
                 return wirTF;
             } else if (aComponent.equals(sieTF)) {
                 return ihrTF;
-            } else if (aComponent.equals(btNext)) {
-                return btSolution;
-            } else if (aComponent.equals(btSolution)) {
-                return btTest;
-            } else if (aComponent.equals(btTest)) {
-                return sieTF;
             }
+            // else if (aComponent.equals(btNext)) {
+            // return btSolution;
+            // } else if (aComponent.equals(btSolution)) {
+            // return btTest;
+            // } else if (aComponent.equals(btTest)) {
+            // return sieTF;
+            // }
             return ichTF;
         }
 
@@ -217,7 +217,7 @@ public class VerbPanel extends TranslationPanel {
         }
 
         public Component getLastComponent(Container focusCycleRoot) {
-            return btNext;
+            return sieTF;
         }
 
         public Component getFirstComponent(Container focusCycleRoot) {
@@ -230,6 +230,48 @@ public class VerbPanel extends TranslationPanel {
         Verb verb = (Verb) tr;
         return verb.getSource() + " " + verb.getDescription();
 
+    }
+
+    @Override
+    public Component getNextFocus(Component component) {
+        if (component.equals(ichTF)) {
+            return doTF;
+        } else if (component.equals(doTF)) {
+            return erTF;
+        } else if (component.equals(erTF)) {
+            return wirTF;
+        } else if (component.equals(wirTF)) {
+            return ihrTF;
+        } else if (component.equals(ihrTF)) {
+            return sieTF;
+        }
+        return null;
+    }
+
+    @Override
+    public Component getFirstFocusComponent() {
+        return ichTF;
+    }
+
+    @Override
+    public Component getBeforeFocus(Component component) {
+        if (component.equals(doTF)) {
+            return ichTF;
+        } else if (component.equals(erTF)) {
+            return doTF;
+        } else if (component.equals(wirTF)) {
+            return erTF;
+        } else if (component.equals(ihrTF)) {
+            return wirTF;
+        } else if (component.equals(sieTF)) {
+            return ihrTF;
+        }
+        return null;
+    }
+
+    @Override
+    public Component getLastFocusComponent() {
+        return sieTF;
     }
 
 }

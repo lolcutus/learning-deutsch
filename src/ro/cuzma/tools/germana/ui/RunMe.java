@@ -4,6 +4,9 @@
 package ro.cuzma.tools.germana.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.FocusTraversalPolicy;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -65,6 +68,8 @@ public class RunMe {
     JButton btSolution = new JButton("Solution");
     JButton btNext = new JButton("Next");
     JButton btTest = new JButton("Test");
+
+    TranslateFocusTraversalPolicy focusPolicy = new TranslateFocusTraversalPolicy(null);
 
     JLabel showInfo = new JLabel();
 
@@ -167,6 +172,8 @@ public class RunMe {
                 actionClose();
             }
         });
+
+        mainFrame.setFocusTraversalPolicy(focusPolicy);
 
         // mainFrame.setLayout(new BorderLayout());
         // mainFrame.setBounds(0, 0, 800, 125);
@@ -313,6 +320,7 @@ public class RunMe {
         // check if there is no empty list
         if (!learningList.isEmpty()) {
             tr = learningList.getNext();
+
         }
         if (tr == null) {
             newJPanel(new EmptyPanel());
@@ -348,7 +356,15 @@ public class RunMe {
             mainPanel.remove(currentPanel);
         }
         currentPanel = newPanel;
+
+        if (currentPanel instanceof TranslationPanel) {
+            focusPolicy.setTranslationPanel((TranslationPanel) currentPanel);
+        } else {
+            focusPolicy.setTranslationPanel(null);
+        }
+
         mainPanel.add(currentPanel, BorderLayout.CENTER);
+        focusPolicy.getFirstComponent(mainFrame).requestFocus();
         mainPanel.validate();
         mainFrame.repaint();
 
@@ -438,6 +454,78 @@ public class RunMe {
         currentLanguage = language;
         learningList.setLanguage(language);
         nextTranslation();
+    }
+
+    public class TranslateFocusTraversalPolicy extends FocusTraversalPolicy {
+
+        private TranslationPanel tr;
+
+        public void setTranslationPanel(TranslationPanel tr) {
+            this.tr = tr;
+        }
+
+        public TranslateFocusTraversalPolicy(TranslationPanel tr) {
+            super();
+            this.tr = tr;
+        }
+
+        public Component getComponentAfter(Container focusCycleRoot, Component aComponent) {
+            Component comp = null;
+            if (tr != null)
+                comp = tr.getNextFocus(aComponent);
+            if (comp == null) {
+                if (aComponent.equals(btTest)) {
+                    comp = btSolution;
+                } else if (aComponent.equals(btSolution)) {
+                    comp = btNext;
+                } else if (aComponent.equals(btNext)) {
+                    if (tr != null)
+                        comp = tr.getFirstFocusComponent();
+                    else
+                        comp = btTest;
+                } else
+                    comp = btTest;
+            }
+            return comp;
+        }
+
+        public Component getComponentBefore(Container focusCycleRoot, Component aComponent) {
+            Component comp = null;
+            if (tr != null)
+                comp = tr.getBeforeFocus(aComponent);
+            if (comp == null) {
+                if (aComponent.equals(btNext)) {
+                    comp = btSolution;
+                } else if (aComponent.equals(btSolution)) {
+                    comp = btTest;
+                } else if (aComponent.equals(btNext)) {
+                    if (tr != null)
+                        comp = tr.getLastFocusComponent();
+                    else
+                        comp = btNext;
+                } else
+                    comp = btNext;
+            }
+            return comp;
+        }
+
+        public Component getDefaultComponent(Container focusCycleRoot) {
+            if (tr != null)
+                return tr.getFirstFocusComponent();
+            else
+                return btTest;
+        }
+
+        public Component getLastComponent(Container focusCycleRoot) {
+            return btNext;
+        }
+
+        public Component getFirstComponent(Container focusCycleRoot) {
+            if (tr != null)
+                return tr.getFirstFocusComponent();
+            else
+                return btTest;
+        }
     }
 
 }

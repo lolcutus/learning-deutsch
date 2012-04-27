@@ -2,6 +2,7 @@ package ro.cuzma.tools.germana.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
 
@@ -110,6 +111,32 @@ public class SubstantivPanel extends TranslationPanel {
     protected String getTitle() {
         Substantiv substantiv = (Substantiv) tr;
         return substantiv.getSourceSg() + " " + substantiv.getDescription();
+    }
+
+    @Override
+    public Component getNextFocus(Component component) {
+        Component comp = null;
+        if (component.equals(singularTF))
+            comp = pluralTF;
+        return comp;
+    }
+
+    @Override
+    public Component getFirstFocusComponent() {
+        return singularTF;
+    }
+
+    @Override
+    public Component getBeforeFocus(Component component) {
+        Component comp = null;
+        if (component.equals(pluralTF))
+            comp = singularTF;
+        return comp;
+    }
+
+    @Override
+    public Component getLastFocusComponent() {
+        return pluralTF;
     }
 
 }

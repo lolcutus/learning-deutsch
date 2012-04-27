@@ -1,5 +1,6 @@
 package ro.cuzma.tools.germana.ui;
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -84,6 +85,26 @@ public class CuvantPanel extends TranslationPanel {
     protected String getTitle() {
         Cuvant cuv = (Cuvant) tr;
         return cuv.getRomana() + " " + cuv.getDescription();
+    }
+
+    @Override
+    public Component getNextFocus(Component component) {
+        return null;
+    }
+
+    @Override
+    public Component getFirstFocusComponent() {
+        return traducereTF;
+    }
+
+    @Override
+    public Component getBeforeFocus(Component component) {
+        return null;
+    }
+
+    @Override
+    public Component getLastFocusComponent() {
+        return traducereTF;
     }
 
 }
