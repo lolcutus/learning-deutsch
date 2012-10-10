@@ -49,6 +49,7 @@ public abstract class TranslationPanel extends JPanel {
     protected abstract boolean setTestAction();
 
     public void setTranslation(Translation tr) {
+        firstCorrectAnswer = true;
         this.tr = tr;
         setTitle();
         reset();
